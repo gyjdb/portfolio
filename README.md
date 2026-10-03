@@ -1,4 +1,5 @@
 # Ethan Cai — Portfolio
+GitHub Pages: gyjdb.github.io/portfolio/
 
 Personal portfolio for DSC 106, built with HTML and CSS.
 

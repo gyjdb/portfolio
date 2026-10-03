@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Ethan Cai by email about research, projects, or collaboration.">
+  <title>Contact | Ethan Cai</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html" aria-label="EC: Ethan Cai, home">EC<span aria-hidden="true">.</span></a>
+    <nav aria-label="Main">
+        <a href="../index.html">Home</a>
+        <a href="../projects/index.html">Projects</a>
+        <a href="../resume/index.html">Resume</a>
+        <a href="index.html" aria-current="page">Contact</a>
+        <a href="https://github.com/gyjdb" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+    </nav>
+  </header>
+  <main id="main">
+<header class="page-intro">
+  <p class="eyebrow">Get in touch</p>
+  <h1>Contact<span class="accent">.</span></h1>
+  <p>Have a question about a project? Send me a message.</p>
+</header>
+<div class="contact-layout">
+  <section class="contact-info" aria-labelledby="contact-info-heading">
+    <h2 id="contact-info-heading">Let’s connect.</h2>
+    <p>You can reach me at<br><a href="mailto:e3cai@ucsd.edu">e3cai@ucsd.edu</a>.</p>
+    <p class="meta">La Jolla, California</p>
+    <p class="form-note" id="mail-note">This form opens a draft in your email app. Review it there before sending, or email me directly.</p>
+  </section>
+  <form action="mailto:e3cai@ucsd.edu" method="POST" enctype="text/plain" aria-label="Email Ethan" aria-describedby="mail-note">
+    <label for="email">
+      Your email
+      <input type="email" id="email" name="email" autocomplete="email"
+             placeholder="you@example.com" required>
+    </label>
+    <label for="subject">
+      Subject
+      <input type="text" id="subject" name="subject"
+             placeholder="What would you like to discuss?" required>
+    </label>
+    <label for="body">
+      Message
+      <textarea id="body" name="body" rows="7"
+                placeholder="Write your message here…" required></textarea>
+    </label>
+    <button type="submit">Open email draft <span aria-hidden="true">↗</span></button>
+    <p class="meta">All fields are required.</p>
+  </form>
+</div>
+  </main>
+  <footer class="site-footer">
+    <p>Ethan Cai <span aria-hidden="true">/</span> La Jolla, California</p>
+    <p>Personal portfolio <span aria-hidden="true">·</span> DSC 106</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ethan Cai’s work in quantitative research, predictive modeling, blockchain systems, and computer vision.">
+  <title>Projects | Ethan Cai</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html" aria-label="EC: Ethan Cai, home">EC<span aria-hidden="true">.</span></a>
+    <nav aria-label="Main">
+        <a href="../index.html">Home</a>
+        <a href="index.html" aria-current="page">Projects</a>
+        <a href="../resume/index.html">Resume</a>
+        <a href="../contact/index.html">Contact</a>
+        <a href="https://github.com/gyjdb" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+    </nav>
+  </header>
+  <main id="main">
+<header class="page-intro">
+  <p class="eyebrow">Research &amp; projects</p>
+  <h1>Projects<span class="accent">.</span></h1>
+  <p>Selected projects in quantitative research, machine learning, and systems integration.</p>
+</header>
+<nav class="project-index" aria-label="Project shortcuts">
+  <a href="#crypto-alpha">Crypto research</a>
+  <a href="#blockchain">Blockchain system</a>
+  <a href="#pubg">PUBG prediction</a>
+  <a href="#deepfake">Deepfake detection</a>
+</nav>
+<div class="project-list">
+<article class="project-detail" id="crypto-alpha" aria-labelledby="crypto-alpha-heading">
+  <header>
+    <p class="eyebrow">01 / Quantitative research</p>
+    <h2 id="crypto-alpha-heading">Intraday Crypto Alpha &amp; Machine Learning Research</h2>
+    <p class="role">Research project with classmates</p>
+    <p class="meta"><time datetime="2025-08">Aug 2025</time> &ndash; <time datetime="2026-04">Apr 2026</time></p>
+    <p class="tools">Python, Static Time-of-Day normalization, LightGBM</p>
+  </header>
+  <p class="project-summary">Investigating intraday seasonality and the stability of predictive features across crypto market regimes.</p>
+  <dl class="project-facts">
+    <dt>Data &amp; pipeline</dt>
+    <dd>Built a minute-level Binance research pipeline using crypto data from <strong>2020–2025</strong>, with triple-barrier labels and Static Time-of-Day normalization.</dd>
+    <dt>My contribution</dt>
+    <dd>Developed the research workflow and compared LightGBM with logistic regression using rolling validation.</dd>
+    <dt>Evaluation</dt>
+    <dd>Assessed strategies with transaction costs, turnover, and non-overlapping positions to account for trading constraints.</dd>
+  </dl>
+</article>
+<article class="project-detail" id="blockchain" aria-labelledby="blockchain-heading">
+  <header>
+    <p class="eyebrow">02 / Systems integration</p>
+    <h2 id="blockchain-heading">Blockchain Evidence System Reproduction</h2>
+    <p class="role">Reproduction lead · Team project</p>
+    <p class="meta"><time datetime="2025-11">Nov 2025</time> &ndash; <time datetime="2025-12">Dec 2025</time></p>
+    <p class="tools">FISCO BCOS, WeBASE, Django, WeChat Mini Program</p>
+  </header>
+  <p class="project-summary">Reproducing an end-to-end evidence-recording workflow across smart contracts, a Django backend, and a WeChat Mini Program.</p>
+  <dl class="project-facts">
+    <dt>Infrastructure</dt>
+    <dd>Configured FISCO BCOS and WeBASE and deployed user, proposal, and tracking contracts.</dd>
+    <dt>My contribution</dt>
+    <dd>Led the reproduction effort, corrected blockchain interface settings in Django, and connected the cloud backend to the local Mini Program through network tunneling.</dd>
+    <dt>Verification</dt>
+    <dd>Adjusted API endpoints and tested frontend–backend integration, including registration and proposal submission.</dd>
+  </dl>
+</article>
+<article class="project-detail" id="pubg" aria-labelledby="pubg-heading">
+  <header>
+    <p class="eyebrow">03 / Predictive modeling</p>
+    <h2 id="pubg-heading">PUBG Placement Prediction &amp; Model Ensemble</h2>
+    <p class="role">LightGBM modeling lead · Two-person data mining course project</p>
+    <p class="meta"><time datetime="2025-06">Jun 2025</time></p>
+    <p class="tools">Python, LightGBM, CatBoost</p>
+  </header>
+  <p class="project-summary">Predicting match placement from player, team, and match features with gradient-boosted models.</p>
+  <dl class="project-facts">
+    <dt>Data &amp; features</dt>
+    <dd>Worked with a teammate on approximately <strong>1.5 million player records</strong> and <strong>51 derived features</strong> across three levels of aggregation.</dd>
+    <dt>My contribution</dt>
+    <dd>Led LightGBM tuning and feature analysis, used <strong>5-fold GroupKFold</strong> validation, and combined predictions with the teammate’s CatBoost results.</dd>
+    <dt>Reported result</dt>
+    <dd>The project report records a final public leaderboard score of <strong>96.8139</strong>.</dd>
+  </dl>
+</article>
+<article class="project-detail" id="deepfake" aria-labelledby="deepfake-heading">
+  <header>
+    <p class="eyebrow">04 / Computer vision</p>
+    <h2 id="deepfake-heading">Deepfake Detection Model Optimization</h2>
+    <p class="role">Independent researcher</p>
+    <p class="meta"><time datetime="2024-10">Oct 2024</time> &ndash; <time datetime="2025-01">Jan 2025</time></p>
+    <p class="tools">Python, PyTorch, MobileNetV3, GCBlock</p>
+  </header>
+  <p class="project-summary">Improving MobileNetV3-based deepfake detection while examining classification performance and robustness to adversarial inputs.</p>
+  <dl class="project-facts">
+    <dt>My contribution</dt>
+    <dd>Conducted model experiments, introduced GCBlock-based feature refinement, and evaluated precision–recall trade-offs.</dd>
+    <dt>Reported result</dt>
+    <dd>Reduced inference time by approximately <strong>20%</strong> under project test conditions.</dd>
+    <dt>Research output</dt>
+    <dd>Consolidated the model experiments and results into a manuscript.</dd>
+  </dl>
+</article>
+</div>
+<p class="closing-link"><a class="text-link" href="../resume/index.html">See the full resume <span aria-hidden="true">→</span></a></p>
+  </main>
+  <footer class="site-footer">
+    <p>Ethan Cai <span aria-hidden="true">/</span> La Jolla, California</p>
+    <p>Personal portfolio <span aria-hidden="true">·</span> DSC 106</p>
+  </footer>
+</body>
+</html>

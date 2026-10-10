@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="450" viewBox="0 0 720 450">
+  <rect width="720" height="450" fill="#edf1ef"/>
+  <g fill="#22566f" font-family="system-ui, sans-serif" font-size="22"><rect x="188" y="120" width="344" height="214" rx="5" fill="none" stroke="#b6c5c9" stroke-width="3" stroke-dasharray="9 9"/><path d="M333 227H387M360 200V254" stroke="#b6c5c9" stroke-width="3"/><text x="360" y="381" text-anchor="middle" fill="#57636b">Upcoming project</text></g>
+</svg>

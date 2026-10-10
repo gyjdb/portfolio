@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="450" viewBox="0 0 720 450">
+  <rect width="720" height="450" fill="#edf1ef"/>
+  <g fill="#22566f" font-family="system-ui, sans-serif" font-size="22"><path d="M72 320H648M72 120V320" fill="none" stroke="#b6c5c9" stroke-width="2"/><path d="M72 262 123 231 174 250 225 184 276 207 327 158 378 181 429 128 480 167 531 147 582 203 648 174" fill="none" stroke="#22566f" stroke-width="6"/><rect x="444" y="104" width="204" height="216" fill="#22566f" opacity=".08"/><text x="80" y="365">Signal</text><text x="472" y="365">Validation</text></g>
+</svg>

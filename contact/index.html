@@ -15,7 +15,7 @@
         <a href="../index.html">Home</a>
         <a href="../projects/index.html">Projects</a>
         <a href="../resume/index.html">Resume</a>
-        <a href="index.html" aria-current="page">Contact</a>
+        <a href="index.html" class="current" aria-current="page">Contact</a>
         <a href="https://github.com/gyjdb" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
     </nav>
   </header>
@@ -34,17 +34,17 @@
   </section>
   <form action="mailto:e3cai@ucsd.edu" method="POST" enctype="text/plain" aria-label="Email Ethan" aria-describedby="mail-note">
     <label for="email">
-      Your email
+      <span class="label-text">Your email</span>
       <input type="email" id="email" name="email" autocomplete="email"
              placeholder="you@example.com" required>
     </label>
     <label for="subject">
-      Subject
+      <span class="label-text">Subject</span>
       <input type="text" id="subject" name="subject"
              placeholder="What would you like to discuss?" required>
     </label>
     <label for="body">
-      Message
+      <span class="label-text">Message</span>
       <textarea id="body" name="body" rows="7"
                 placeholder="Write your message here…" required></textarea>
     </label>
@@ -59,3 +59,4 @@
   </footer>
 </body>
 </html>
+

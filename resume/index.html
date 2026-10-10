@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Education, experience, research, technical skills, and honors of Ethan (Yucheng) Cai.">
+  <meta name="description" content="Education, research, experience, and technical skills of Ethan (Yucheng) Cai.">
   <title>Resume | Ethan Cai</title>
   <link rel="stylesheet" href="../style.css">
 </head>
@@ -14,7 +14,7 @@
     <nav aria-label="Main">
         <a href="../index.html">Home</a>
         <a href="../projects/index.html">Projects</a>
-        <a href="index.html" aria-current="page">Resume</a>
+        <a href="index.html" class="current" aria-current="page">Resume</a>
         <a href="../contact/index.html">Contact</a>
         <a href="https://github.com/gyjdb" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
     </nav>
@@ -32,92 +32,75 @@
     <article class="resume-entry">
       <header>
         <h3>University of California, San Diego</h3>
-        <p class="role">B.S. in Data Science; Minor in Mathematics</p>
-        <p class="meta"><time datetime="2023">2023</time> &ndash; Present</p>
+        <p class="role">B.S. in Data Science; Minor in Mathematics <span aria-hidden="true">/</span> Transfer student</p>
+        <p class="meta"><time datetime="2025">2025</time> &ndash; Expected <time datetime="2028">2028</time></p>
       </header>
       <ul>
-        <li>GPA: 3.88/4.00; Provost Honors in Fall 2025, Winter 2026, and Spring 2026.</li>
-        <li><strong>Machine learning &amp; statistics:</strong> Machine Learning, Statistical Methods, Probability and Mathematical Statistics.</li>
-        <li><strong>Mathematical foundations:</strong> Linear Algebra and Optimization.</li>
-        <li><strong>Computing &amp; data systems:</strong> Data Structures &amp; Algorithms and Database Systems.</li>
-        <li><strong>In progress:</strong> DSC 106 — Data Visualization.</li>
+        <li><strong>GPA: 3.88/4.00</strong>; Provost Honors: Fall 2025, Winter 2026, Spring 2026.</li>
+        <li>Coursework: Machine Learning, Data Structures &amp; Algorithms, Probability &amp; Mathematical Statistics, Linear Algebra, Database Systems, Statistical Methods, Optimization.</li>
       </ul>
     </article>
-  </section>
-  <section class="resume-section" aria-labelledby="experience-heading">
-    <h2 id="experience-heading">Experience</h2>
-  <article class="resume-entry">
-    <header>
-      <h3>Bosera Asset Management Co., Ltd.</h3>
-      <p class="role">Sales Management Intern <span aria-hidden="true">/</span> Shenzhen, China</p>
-      <p class="meta"><time datetime="2026-08">Aug 2026</time> &ndash; <time datetime="2026-09">Sep 2026</time></p>
-    </header>
-    <ul>
-      <li>Automated daily equity and fixed-income market-monitoring reports using Python and Excel, improving the consistency and reproducibility of internal reporting.</li>
-      <li>Audited fund onboarding materials, identified missing or inconsistent fields, and developed a standardized submission checklist for sales and operations teams.</li>
-    </ul>
-  </article>
-  <article class="resume-entry">
-    <header>
-      <h3>Bopu Technology</h3>
-      <p class="role">Quantitative Research Intern <span aria-hidden="true">/</span> Shenzhen, China</p>
-      <p class="meta"><time datetime="2025-07">Jul 2025</time> &ndash; <time datetime="2025-09">Sep 2025</time></p>
-    </header>
-    <ul>
-      <li>Designed a cross-sectional contrarian relative-strength screener over approximately 200 liquid crypto assets using 15-minute bars; combined relative return, residual z-score, cumulative residual, and intrasegment volatility to rank the top five opportunities at each rebalance.</li>
-      <li>Built leakage-aware backtests with stablecoin and liquidity filters, non-overlapping samples, and holding periods below 24 hours; achieved approximately 19% backtest return, 1.50 Sharpe, 1.37 Sortino, and 15% maximum drawdown.</li>
-      <li>Evaluated EMA(10/35) with ATR-based exits and SMA20 with z-score mean-reversion baselines; performed transaction-cost and regime-robustness analyses.</li>
-    </ul>
-  </article>
   </section>
   <section class="resume-section" aria-labelledby="research-heading">
     <h2 id="research-heading">Research &amp; Projects</h2>
   <article class="resume-entry">
     <header>
-      <h3><a href="../projects/index.html#crypto-alpha">Intraday Crypto Alpha &amp; Machine Learning Research</a></h3>
-      <p class="role">Research project with classmates</p>
-      <p class="tools">Python, Static Time-of-Day normalization, LightGBM</p>
-      <p class="meta"><time datetime="2025-08">Aug 2025</time> &ndash; <time datetime="2026-04">Apr 2026</time></p>
+      <h3><a href="../projects/index.html#ner">Named Entity Recognition in Chinese Fiction</a></h3>
+      <p class="role">Independent research <span aria-hidden="true">/</span> <a href="https://github.com/gyjdb/chinese-novel-ner">Code &amp; experiments</a></p>
+      <p class="tools">Python, PyTorch, Chinese RoBERTa</p>
+      <p class="meta"><time datetime="2026-09">Sep 2026</time> &ndash; <time datetime="2026-10">Oct 2026</time></p>
     </header>
     <ul>
-      <li>Built a minute-level Binance research pipeline using crypto data from <strong>2020–2025</strong> to study intraday seasonality and feature stability across market regimes.</li>
-      <li>Applied triple-barrier labeling, Static Time-of-Day normalization, and rolling validation to compare LightGBM with logistic regression; evaluated strategies with transaction costs, turnover, and non-overlapping positions.</li>
+      <li>Conducted a six-type NER study on a long Chinese web novel with author-invented names; defined annotation guidelines and adjudication procedures for characters, locations, organizations, and other fictional entities.</li>
+      <li>Evaluated a two-stage Chinese RoBERTa tagger using <strong>749 weakly labeled chapters</strong> followed by <strong>100 LLM teacher-labeled chapters</strong>; compared labeling and training choices across <strong>six rounds of controlled experiments</strong>.</li>
+      <li>Reached <strong>90.8% strict entity-level F1</strong> (three-seed mean) on a held-out, <strong>40-chapter silver-standard test set</strong>, <strong>2.0 percentage points</strong> above the teacher-only baseline.</li>
     </ul>
   </article>
   <article class="resume-entry">
     <header>
-      <h3><a href="../projects/index.html#blockchain">Blockchain Evidence System Reproduction</a></h3>
-      <p class="role">Reproduction lead · Team project</p>
-      <p class="tools">FISCO BCOS, WeBASE, Django, WeChat Mini Program</p>
-      <p class="meta"><time datetime="2025-11">Nov 2025</time> &ndash; <time datetime="2025-12">Dec 2025</time></p>
+      <h3><a href="../projects/index.html#crypto">Intraday Crypto Prediction and Time-Series Evaluation</a></h3>
+      <p class="tools">Python, LightGBM, Logistic Regression</p>
+      <p class="meta"><time datetime="2025-08">Aug 2025</time> &ndash; <time datetime="2025-11">Nov 2025</time></p>
     </header>
     <ul>
-      <li>Reproduced the on-chain evidence workflow: configured FISCO BCOS and WeBASE, deployed user, proposal, and tracking contracts, and corrected the Django backend’s blockchain interface configuration.</li>
-      <li>Connected the cloud backend to a local WeChat Mini Program through network tunneling; adjusted API endpoints and verified registration and proposal-submission workflows through frontend–backend integration.</li>
+      <li>Developed a minute-level research pipeline for BTC, ETH, BNB, XRP, and SOL at 1-, 5-, and 15-minute horizons; applied rolling time-of-day normalization and path-dependent triple-barrier labels.</li>
+      <li>Compared LightGBM with logistic regression using chronological 2023/2024/2025 train/validation/test splits; evaluated transaction costs and turnover sensitivity with non-overlapping backtests.</li>
     </ul>
   </article>
   <article class="resume-entry">
     <header>
-      <h3><a href="../projects/index.html#pubg">PUBG Placement Prediction &amp; Model Ensemble</a></h3>
-      <p class="role">LightGBM modeling lead · Two-person data mining course project</p>
+      <h3><a href="../projects/index.html#pubg">PUBG Match Placement Prediction</a></h3>
+      <p class="role">Two-person course project</p>
       <p class="tools">Python, LightGBM, CatBoost</p>
       <p class="meta"><time datetime="2025-06">Jun 2025</time></p>
     </header>
     <ul>
-      <li>Worked with a teammate on approximately <strong>1.5 million player records</strong> and <strong>51 derived features</strong> at player, team, and match levels; led LightGBM tuning and feature analysis.</li>
-      <li>Used <strong>5-fold GroupKFold</strong> validation and combined LightGBM predictions with the teammate’s CatBoost results; the project report records a final public leaderboard score of <strong>96.8139</strong>.</li>
+      <li>Collaborated on <strong>1.5 million player records</strong> and <strong>51 player-, team-, and match-level features</strong>; owned LightGBM model tuning and feature analysis for final placement prediction.</li>
+      <li>Used <strong>five-fold GroupKFold</strong> validation and combined LightGBM predictions with a teammate’s CatBoost model to produce the final ensemble.</li>
+    </ul>
+  </article>
+  </section>
+  <section class="resume-section" aria-labelledby="experience-heading">
+    <h2 id="experience-heading">Experience</h2>
+  <article class="resume-entry">
+    <header>
+      <h3>China Southern Airlines</h3>
+      <p class="role">Market Analysis Intern <span aria-hidden="true">/</span> Shenzhen, China</p>
+      <p class="meta"><time datetime="2026-06">Jun 2026</time> &ndash; <time datetime="2026-08">Aug 2026</time></p>
+    </header>
+    <ul>
+      <li>Researched a three-level market-monitoring framework (macroeconomic conditions, airline competition, passenger demand) and evaluated data sources, including booking systems, OTA, GDS, and mobility data.</li>
+      <li>Proposed passenger-demand early-warning and decision-feedback workflows for operational planning.</li>
     </ul>
   </article>
   <article class="resume-entry">
     <header>
-      <h3><a href="../projects/index.html#deepfake">Deepfake Detection Model Optimization</a></h3>
-      <p class="role">Independent researcher</p>
-      <p class="tools">Python, PyTorch, MobileNetV3, GCBlock</p>
-      <p class="meta"><time datetime="2024-10">Oct 2024</time> &ndash; <time datetime="2025-01">Jan 2025</time></p>
+      <h3>Bosera Asset Management Co., Ltd.</h3>
+      <p class="role">Sales Operations Intern <span aria-hidden="true">/</span> Shenzhen, China</p>
+      <p class="meta"><time datetime="2025-08">Aug 2025</time> &ndash; <time datetime="2025-09">Sep 2025</time></p>
     </header>
     <ul>
-      <li>Conducted MobileNetV3-based deepfake detection experiments, optimizing image classification performance and robustness to adversarial inputs.</li>
-      <li>Introduced GCBlock-based feature refinement and evaluated precision–recall trade-offs; reduced inference time by approximately <strong>20%</strong> under project test conditions and consolidated experiments into a manuscript.</li>
+      <li>Maintained fund product and client data and prepared Excel reports for internal tracking.</li>
     </ul>
   </article>
   </section>
@@ -125,26 +108,12 @@
     <h2 id="skills-heading">Technical Skills</h2>
     <dl class="skills-list">
       <dt>Programming</dt>
-      <dd>Python, SQL, C++17 (STL, object-oriented programming, data structures), Java, R, Solidity</dd>
-      <dt>Machine Learning</dt>
-      <dd>LightGBM, CatBoost, PyTorch, scikit-learn; feature engineering, model tuning, grouped cross-validation, and model ensembles</dd>
-      <dt>Data Analysis &amp; Visualization</dt>
-      <dd>pandas, NumPy, Matplotlib, Tableau, Excel; exploratory analysis and reproducible reporting</dd>
-      <dt>Quantitative Research Methods</dt>
-      <dd>Time-series validation, triple-barrier labeling, time-of-day normalization, backtesting, transaction-cost modeling, and risk/performance evaluation</dd>
-      <dt>Web, Databases &amp; Blockchain</dt>
-      <dd>Django, MySQL, HTML, CSS, FISCO BCOS, WeBASE, Hardhat, Ganache; API integration and smart-contract deployment</dd>
-      <dt>Development &amp; Research Tools</dt>
-      <dd>Git, LaTeX</dd>
+      <dd>Python, SQL, R, C++, Java</dd>
+      <dt>Machine Learning &amp; Data</dt>
+      <dd>PyTorch, Hugging Face Transformers, scikit-learn, LightGBM, CatBoost, pandas, NumPy, Matplotlib</dd>
+      <dt>LLM &amp; Tools</dt>
+      <dd>OpenAI API, Claude Code, Git, MySQL, LaTeX</dd>
     </dl>
-  </section>
-  <section class="resume-section" aria-labelledby="honors-heading">
-    <h2 id="honors-heading">Honors &amp; Additional</h2>
-    <ul>
-      <li>China Undergraduate Mathematical Contest in Modeling — Provincial Second Prize, <time datetime="2024">2024</time></li>
-      <li>China International College Students’ Innovation Competition — National Bronze Award, <time datetime="2024">2024</time></li>
-      <li>Languages: Mandarin (native), English (professional proficiency), Cantonese (conversational)</li>
-    </ul>
   </section>
 </div>
   </main>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ethan Cai’s work in quantitative research, predictive modeling, blockchain systems, and computer vision.">
+  <meta name="description" content="Ethan Cai’s projects in natural language processing, time-series prediction, predictive modeling, blockchain systems, and computer vision.">
   <title>Projects | Ethan Cai</title>
   <link rel="stylesheet" href="../style.css">
 </head>
@@ -13,7 +13,7 @@
     <a class="wordmark" href="../index.html" aria-label="EC: Ethan Cai, home">EC<span aria-hidden="true">.</span></a>
     <nav aria-label="Main">
         <a href="../index.html">Home</a>
-        <a href="index.html" aria-current="page">Projects</a>
+        <a href="index.html" class="current" aria-current="page">Projects</a>
         <a href="../resume/index.html">Resume</a>
         <a href="../contact/index.html">Contact</a>
         <a href="https://github.com/gyjdb" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
@@ -23,36 +23,139 @@
 <header class="page-intro">
   <p class="eyebrow">Research &amp; projects</p>
   <h1>Projects<span class="accent">.</span></h1>
-  <p>Selected projects in quantitative research, machine learning, and systems integration.</p>
+  <p>Research and course projects in natural language processing, time-series prediction, machine learning, blockchain systems, and computer vision, with room for upcoming course work.</p>
 </header>
+<section class="project-gallery" aria-labelledby="gallery-heading">
+  <h2 id="gallery-heading">Project gallery</h2>
+  <div class="projects">
+  <article>
+    <h2><a href="#ner">Named Entity Recognition in Chinese Fiction</a></h2>
+    <img src="../images/ner-tagging.svg" width="720" height="450" alt="Illustration of two rows of text tokens with highlighted character, location, and organization spans.">
+    <p>A six-type NER study on a long Chinese web novel, training a RoBERTa tagger on weak labels and LLM teacher labels.<span class="tools">Python · PyTorch · Chinese RoBERTa</span></p>
+  </article>
+  <article>
+    <h2><a href="#crypto">Intraday Crypto Prediction and Time-Series Evaluation</a></h2>
+    <img src="../images/crypto-research.svg" width="720" height="450" alt="Illustration of a time-series research workflow, with a signal passing through validation.">
+    <p>Minute-level prediction for BTC, ETH, BNB, XRP, and SOL, with chronological splits and cost-aware backtests.<span class="tools">Python · LightGBM · Logistic Regression</span></p>
+  </article>
+  <article>
+    <h2><a href="#pubg">PUBG Match Placement Prediction</a></h2>
+    <img src="../images/prediction-models.svg" width="720" height="450" alt="Illustration of two model paths combining into one prediction.">
+    <p>Placement prediction on 1.5 million player records, with grouped validation and a LightGBM and CatBoost ensemble.<span class="tools">Python · LightGBM · CatBoost</span></p>
+  </article>
+  <article>
+    <h2><a href="#blockchain">Blockchain Evidence System Reproduction</a></h2>
+    <img src="../images/blockchain-system.svg" width="720" height="450" alt="Illustration of a frontend, backend, and connected ledger blocks.">
+    <p>An evidence-recording workflow connecting smart contracts, a Django backend, and a WeChat Mini Program.<span class="tools">FISCO BCOS · WeBASE · Django</span></p>
+  </article>
+  <article>
+    <h2><a href="#deepfake">Deepfake Detection Model Optimization</a></h2>
+    <img src="../images/computer-vision.svg" width="720" height="450" alt="Illustration of an image tile grid and a highlighted feature region.">
+    <p>MobileNetV3 and GCBlock experiments examining classification performance, robustness, and inference time.<span class="tools">Python · PyTorch · MobileNetV3</span></p>
+  </article>
+  <article class="placeholder">
+    <h2>Course project 06</h2>
+    <img src="../images/upcoming-project.svg" width="720" height="450" alt="Placeholder for a future course project." loading="lazy">
+    <p>A place for future DSC 106 work. A project summary and visualization will be added after the assignment is complete.<span class="tools">Upcoming coursework</span></p>
+  </article>
+  <article class="placeholder">
+    <h2>Course project 07</h2>
+    <img src="../images/upcoming-project.svg" width="720" height="450" alt="Placeholder for a future course project." loading="lazy">
+    <p>A place for future DSC 106 work. A project summary and visualization will be added after the assignment is complete.<span class="tools">Upcoming coursework</span></p>
+  </article>
+  <article class="placeholder">
+    <h2>Course project 08</h2>
+    <img src="../images/upcoming-project.svg" width="720" height="450" alt="Placeholder for a future course project." loading="lazy">
+    <p>A place for future DSC 106 work. A project summary and visualization will be added after the assignment is complete.<span class="tools">Upcoming coursework</span></p>
+  </article>
+  <article class="placeholder">
+    <h2>Course project 09</h2>
+    <img src="../images/upcoming-project.svg" width="720" height="450" alt="Placeholder for a future course project." loading="lazy">
+    <p>A place for future DSC 106 work. A project summary and visualization will be added after the assignment is complete.<span class="tools">Upcoming coursework</span></p>
+  </article>
+  <article class="placeholder">
+    <h2>Course project 10</h2>
+    <img src="../images/upcoming-project.svg" width="720" height="450" alt="Placeholder for a future course project." loading="lazy">
+    <p>A place for future DSC 106 work. A project summary and visualization will be added after the assignment is complete.<span class="tools">Upcoming coursework</span></p>
+  </article>
+  <article class="placeholder">
+    <h2>Course project 11</h2>
+    <img src="../images/upcoming-project.svg" width="720" height="450" alt="Placeholder for a future course project." loading="lazy">
+    <p>A place for future DSC 106 work. A project summary and visualization will be added after the assignment is complete.<span class="tools">Upcoming coursework</span></p>
+  </article>
+  <article class="placeholder">
+    <h2>Course project 12</h2>
+    <img src="../images/upcoming-project.svg" width="720" height="450" alt="Placeholder for a future course project." loading="lazy">
+    <p>A place for future DSC 106 work. A project summary and visualization will be added after the assignment is complete.<span class="tools">Upcoming coursework</span></p>
+  </article>
+  </div>
+</section>
+<h2 class="project-details-heading" id="project-details-heading">Selected project details</h2>
 <nav class="project-index" aria-label="Project shortcuts">
-  <a href="#crypto-alpha">Crypto research</a>
-  <a href="#blockchain">Blockchain system</a>
+  <a href="#ner">NER research</a>
+  <a href="#crypto">Crypto prediction</a>
   <a href="#pubg">PUBG prediction</a>
+  <a href="#blockchain">Blockchain system</a>
   <a href="#deepfake">Deepfake detection</a>
 </nav>
 <div class="project-list">
-<article class="project-detail" id="crypto-alpha" aria-labelledby="crypto-alpha-heading">
+<article class="project-detail" id="ner" aria-labelledby="ner-heading">
   <header>
-    <p class="eyebrow">01 / Quantitative research</p>
-    <h2 id="crypto-alpha-heading">Intraday Crypto Alpha &amp; Machine Learning Research</h2>
-    <p class="role">Research project with classmates</p>
-    <p class="meta"><time datetime="2025-08">Aug 2025</time> &ndash; <time datetime="2026-04">Apr 2026</time></p>
-    <p class="tools">Python, Static Time-of-Day normalization, LightGBM</p>
+    <p class="eyebrow">01 / NLP research</p>
+    <h2 id="ner-heading">Named Entity Recognition in Chinese Fiction</h2>
+    <p class="role">Independent research</p>
+    <p class="meta"><time datetime="2026-09">Sep 2026</time> &ndash; <time datetime="2026-10">Oct 2026</time></p>
+    <p class="tools">Python, PyTorch, Chinese RoBERTa</p>
   </header>
-  <p class="project-summary">Investigating intraday seasonality and the stability of predictive features across crypto market regimes.</p>
+  <p class="project-summary">A six-type named entity recognition study on a long Chinese web novel with many author-invented names.</p>
   <dl class="project-facts">
-    <dt>Data &amp; pipeline</dt>
-    <dd>Built a minute-level Binance research pipeline using crypto data from <strong>2020–2025</strong>, with triple-barrier labels and Static Time-of-Day normalization.</dd>
-    <dt>My contribution</dt>
-    <dd>Developed the research workflow and compared LightGBM with logistic regression using rolling validation.</dd>
+    <dt>Annotation</dt>
+    <dd>Defined annotation guidelines and adjudication procedures for characters, locations, organizations, and other fictional entities.</dd>
+    <dt>Training</dt>
+    <dd>Evaluated a two-stage Chinese RoBERTa tagger using <strong>749 weakly labeled chapters</strong> followed by <strong>100 LLM teacher-labeled chapters</strong>, and compared labeling and training choices across <strong>six rounds of controlled experiments</strong>.</dd>
+    <dt>Result</dt>
+    <dd>Reached <strong>90.8% strict entity-level F1</strong> (three-seed mean) on a held-out, 40-chapter silver-standard test set, <strong>2.0 percentage points</strong> above the teacher-only baseline.</dd>
+  </dl>
+  <p class="project-link"><a class="text-link" href="https://github.com/gyjdb/chinese-novel-ner">Code &amp; experiments on GitHub <span aria-hidden="true">→</span></a></p>
+</article>
+<article class="project-detail" id="crypto" aria-labelledby="crypto-heading">
+  <header>
+    <p class="eyebrow">02 / Time-series research</p>
+    <h2 id="crypto-heading">Intraday Crypto Prediction and Time-Series Evaluation</h2>
+    <p class="meta"><time datetime="2025-08">Aug 2025</time> &ndash; <time datetime="2025-11">Nov 2025</time></p>
+    <p class="tools">Python, LightGBM, Logistic Regression</p>
+  </header>
+  <p class="project-summary">Minute-level prediction for five crypto assets, evaluated with chronological splits and trading-cost-aware backtests.</p>
+  <dl class="project-facts">
+    <dt>Pipeline</dt>
+    <dd>Developed a minute-level research pipeline for BTC, ETH, BNB, XRP, and SOL at 1-, 5-, and 15-minute horizons.</dd>
+    <dt>Preprocessing &amp; labels</dt>
+    <dd>Applied rolling time-of-day normalization and path-dependent triple-barrier labels.</dd>
     <dt>Evaluation</dt>
-    <dd>Assessed strategies with transaction costs, turnover, and non-overlapping positions to account for trading constraints.</dd>
+    <dd>Compared LightGBM with logistic regression using chronological 2023/2024/2025 train/validation/test splits, and evaluated transaction costs and turnover sensitivity with non-overlapping backtests.</dd>
+  </dl>
+</article>
+<article class="project-detail" id="pubg" aria-labelledby="pubg-heading">
+  <header>
+    <p class="eyebrow">03 / Predictive modeling</p>
+    <h2 id="pubg-heading">PUBG Match Placement Prediction</h2>
+    <p class="role">Two-person course project</p>
+    <p class="meta"><time datetime="2025-06">Jun 2025</time></p>
+    <p class="tools">Python, LightGBM, CatBoost</p>
+  </header>
+  <p class="project-summary">Predicting final match placement from player-, team-, and match-level features with gradient-boosted models.</p>
+  <dl class="project-facts">
+    <dt>Data &amp; features</dt>
+    <dd>Collaborated on <strong>1.5 million player records</strong> and <strong>51 player-, team-, and match-level features</strong>.</dd>
+    <dt>My contribution</dt>
+    <dd>Owned LightGBM model tuning and feature analysis for final placement prediction.</dd>
+    <dt>Validation &amp; ensemble</dt>
+    <dd>Used <strong>five-fold GroupKFold</strong> validation and combined LightGBM predictions with a teammate’s CatBoost model to produce the final ensemble.</dd>
   </dl>
 </article>
 <article class="project-detail" id="blockchain" aria-labelledby="blockchain-heading">
   <header>
-    <p class="eyebrow">02 / Systems integration</p>
+    <p class="eyebrow">04 / Systems integration</p>
     <h2 id="blockchain-heading">Blockchain Evidence System Reproduction</h2>
     <p class="role">Reproduction lead · Team project</p>
     <p class="meta"><time datetime="2025-11">Nov 2025</time> &ndash; <time datetime="2025-12">Dec 2025</time></p>
@@ -68,29 +171,11 @@
     <dd>Adjusted API endpoints and tested frontend–backend integration, including registration and proposal submission.</dd>
   </dl>
 </article>
-<article class="project-detail" id="pubg" aria-labelledby="pubg-heading">
-  <header>
-    <p class="eyebrow">03 / Predictive modeling</p>
-    <h2 id="pubg-heading">PUBG Placement Prediction &amp; Model Ensemble</h2>
-    <p class="role">LightGBM modeling lead · Two-person data mining course project</p>
-    <p class="meta"><time datetime="2025-06">Jun 2025</time></p>
-    <p class="tools">Python, LightGBM, CatBoost</p>
-  </header>
-  <p class="project-summary">Predicting match placement from player, team, and match features with gradient-boosted models.</p>
-  <dl class="project-facts">
-    <dt>Data &amp; features</dt>
-    <dd>Worked with a teammate on approximately <strong>1.5 million player records</strong> and <strong>51 derived features</strong> across three levels of aggregation.</dd>
-    <dt>My contribution</dt>
-    <dd>Led LightGBM tuning and feature analysis, used <strong>5-fold GroupKFold</strong> validation, and combined predictions with the teammate’s CatBoost results.</dd>
-    <dt>Reported result</dt>
-    <dd>The project report records a final public leaderboard score of <strong>96.8139</strong>.</dd>
-  </dl>
-</article>
 <article class="project-detail" id="deepfake" aria-labelledby="deepfake-heading">
   <header>
-    <p class="eyebrow">04 / Computer vision</p>
+    <p class="eyebrow">05 / Computer vision</p>
     <h2 id="deepfake-heading">Deepfake Detection Model Optimization</h2>
-    <p class="role">Independent researcher</p>
+    <p class="role">Independent research</p>
     <p class="meta"><time datetime="2024-10">Oct 2024</time> &ndash; <time datetime="2025-01">Jan 2025</time></p>
     <p class="tools">Python, PyTorch, MobileNetV3, GCBlock</p>
   </header>

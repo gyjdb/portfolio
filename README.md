@@ -1,7 +1,7 @@
 # Ethan Cai — Portfolio
 GitHub Pages: https://gyjdb.github.io/portfolio/
 
-Personal portfolio for DSC 106, built with HTML and CSS.
+Personal portfolio for DSC 106, built with HTML, CSS, and JavaScript.
 
 ## Pages
 
@@ -12,7 +12,7 @@ Personal portfolio for DSC 106, built with HTML and CSS.
 
 ## Run locally
 
-Open `index.html` in a browser, or serve this directory:
+Serve this directory with a local HTTP server (JavaScript modules do not work when opening HTML files directly):
 
 ```sh
 python -m http.server 8000
@@ -39,6 +39,19 @@ The project thumbnails are original SVG illustrations of the project workflows; 
 For the Lab 2 submission, provide the repository link and an MP4 screen recording of at most one minute. Verbally show the personalized pages, resize the browser, and explain one interesting CSS concept you learned.
 
 [Assignment instructions](https://dsc106.com/labs/lab02/)
+
+## Lab 3: JavaScript interactions
+
+- All four pages load the shared `global.js` module.
+- Navigation is generated from one page list. The current page receives a visible underline and `aria-current="page"`; external navigation links open in a new tab.
+- `BASE_PATH` is read from where `global.js` is served (`/` locally, `/portfolio/` on GitHub Pages), so both local hosting and the `/portfolio/` GitHub Pages path work. Directory URLs and `index.html` URLs highlight the same page.
+- The top-right theme control offers Automatic, Light, and Dark. Automatic follows the operating system and shows which scheme it currently resolves to; `localStorage` keeps the selection across refreshes and page navigation.
+- Theme-aware colors cover text, navigation, buttons, forms, borders, keyboard focus, and the project illustrations. Printing uses the light palette.
+- Optional contact-form improvement: subject and message are percent-encoded into an email draft, preserving spaces, Unicode, and special characters. The sender address comes from the email app.
+
+For the Lab 3 submission, provide the repository and live website links, plus an MP4 screen recording no longer than one minute. Verbally show the site, switch between all three themes, refresh to demonstrate persistence, and share one interesting thing you learned.
+
+[Lab 3 instructions](https://dsc106.com/labs/lab03/)
 
 ## Notes
 

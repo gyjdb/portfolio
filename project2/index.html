@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Project 2 Report</title>
+        <style>
+            :root {
+                --color-neutral-95: hsl(220 10% 95%);
+                --color-neutral-90: hsl(220 10% 90%);
+                --color-neutral-80: hsl(220 10% 80%);
+                --color-neutral-70: hsl(220 10% 70%);
+                --color-neutral-60: hsl(220 10% 60%);
+                --color-neutral-50: hsl(220 10% 50%);
+                --color-neutral-40: hsl(220 10% 40%);
+                --color-neutral-30: hsl(220 10% 30%);
+                --color-neutral-20: hsl(220 10% 20%);
+                --color-neutral-10: hsl(220 10% 10%);
+            }
+
+            html {
+                font: 100%/1.5 system-ui;
+                counter-reset: figure;
+                background: var(--color-neutral-95);
+                max-width: min(75vw, 80em);
+                margin: 0 auto;
+            }
+
+            /* Headings */
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                line-height: 1.1;
+                font-weight: 600;
+                text-wrap: balance;
+            }
+
+            h1,
+            h2 {
+                border-bottom: 1px solid var(--color-neutral-80);
+                padding-bottom: 0.2em;
+            }
+
+            h1 {
+                margin-block: 1em 0.5rem;
+                font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+                font-weight: 800;
+
+                small {
+                    display: block;
+                    width: fit-content;
+                    padding: 0.2em 0.5em;
+                    margin-inline: auto;
+                    color: white;
+                    background: var(--color-neutral-40);
+                    font-size: 40%;
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                }
+            }
+
+            h2 {
+                font-size: 180%;
+                color: var(--color-neutral-30);
+            }
+
+            h3 {
+                font-size: 130%;
+            }
+
+            /* Lists */
+
+            ul,
+            ol {
+                padding-inline-start: 2em;
+            }
+
+            li {
+                &::marker {
+                    color: var(--color-neutral-40);
+                }
+
+                + li {
+                    margin-top: 0.2em;
+                }
+            }
+
+            /* Sectioning elements */
+
+            header {
+                padding-block: 1em;
+                text-align: center;
+            }
+
+            main {
+                background: white;
+                color: var(--color-neutral-20);
+                border-radius: 1rem;
+                padding: 0.1rem 2rem;
+            }
+
+            /* Figures */
+
+            figure {
+                margin: 1em 0;
+                padding: 0.5rem;
+                margin-inline: -0.5em;
+                border: 1px solid var(--color-neutral-80);
+                box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+                text-align: center;
+                background: white;
+
+                > figcaption {
+                    font: 500 75% var(--font-sans);
+                    background: var(--color-neutral-95);
+                    padding: 0.5rem;
+                    margin: -0.5rem;
+                    margin-top: 0.5rem;
+                    counter-increment: figure;
+                    text-align: left;
+
+                    &::before {
+                        content: "Figure " counter(figure) ": ";
+                        font-weight: bold;
+                        color: var(--color-neutral-40);
+                    }
+
+                    a:not(:hover, :focus, :active) {
+                        color: inherit;
+                        text-decoration: underline;
+                        text-decoration-color: color-mix(
+                            in lab,
+                            currentColor,
+                            transparent 70%
+                        );
+                    }
+                }
+            }
+
+            /* ---- Additions to the course template ---- */
+
+            :root {
+                --deceptive: hsl(28 85% 52%);
+                --earnest: hsl(172 45% 36%);
+            }
+
+            img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+                margin: 0 auto;
+            }
+
+            header p {
+                margin: 0.25em 0;
+            }
+
+            /* Design decisions with a -2 (deceptive) to +2 (earnest) marker; set --score on the li */
+            .decisions {
+                list-style: none;
+                padding-inline-start: 0;
+            }
+
+            .decision {
+                padding-top: 0.9em;
+                border-top: 1px solid var(--color-neutral-90);
+
+                + .decision {
+                    margin-top: 0.9em;
+                }
+
+                h4 {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 0.4em 1em;
+                    margin: 0 0 0.4em;
+                    font-size: 105%;
+                }
+
+                p {
+                    margin: 0;
+                }
+            }
+
+            .score {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.6em;
+                font-size: 90%;
+                font-weight: 700;
+                font-variant-numeric: tabular-nums;
+                color: var(--color-neutral-30);
+                white-space: nowrap;
+            }
+
+            .meter {
+                position: relative;
+                display: inline-block;
+                width: 6em;
+                height: 0.45em;
+                border-radius: 1em;
+                background: linear-gradient(
+                    to right,
+                    var(--deceptive),
+                    var(--color-neutral-90) 50%,
+                    var(--earnest)
+                );
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: calc((var(--score, 0) + 2) * 25%);
+                    width: 0.85em;
+                    height: 0.85em;
+                    border-radius: 50%;
+                    background: var(--color-neutral-20);
+                    border: 2px solid white;
+                    box-shadow: 0 0 0 1px var(--color-neutral-60);
+                    transform: translate(-50%, -50%);
+                }
+
+                &.legend::after {
+                    display: none;
+                }
+            }
+
+            .scale-legend {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 0.6em;
+                font-size: 90%;
+                color: var(--color-neutral-40);
+            }
+
+            /* Placeholder boxes for teammates; delete each box once its content is in */
+            .todo {
+                margin: 1em 0;
+                padding: 0.75em 1em;
+                border: 2px dashed hsl(40 85% 50%);
+                border-radius: 0.6em;
+                background: hsl(45 100% 96%);
+                color: hsl(30 60% 22%);
+
+                p,
+                ul {
+                    margin: 0.4em 0;
+                }
+            }
+
+            .todo-inline {
+                padding: 0 0.3em;
+                border: 1px dashed hsl(40 85% 50%);
+                background: hsl(45 100% 92%);
+                color: hsl(30 60% 22%);
+            }
+
+            @media (max-width: 40em) {
+                html {
+                    max-width: none;
+                    margin: 0 0.75rem;
+                }
+
+                main {
+                    padding: 0.1rem 1rem;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>
+                <small>Project 2</small>
+                Persuasive or Deceptive Visualization?
+            </h1>
+
+            <p><strong>Matthew Ramos</strong> — <em>mnramos@ucsd.edu</em></p>
+            <p><strong>Mayur Nookala</strong> — <em>mnookala@ucsd.edu</em></p>
+            <p><strong>Ethan Cai</strong> — <em>e3cai@ucsd.edu</em></p>
+        </header>
+
+        <main>
+            <h2>Proposition: China is beating the U.S. in the tech race.</h2>
+
+            <p>
+                Both visualizations use one dataset: the World Bank World Development Indicators,
+                science and technology series (the
+                <a href="https://github.com/light-and-salt/World-Bank-Data-by-Indicators">September 2021 snapshot</a>
+                provided for the course), comparing China and the United States. Figure 1 argues for the
+                proposition with growth rates; Figure 2 answers it with the same IP royalty data, shown in
+                dollars instead.
+            </p>
+
+            <p class="scale-legend">
+                Each design decision is scored from
+                <span><strong>−2</strong> fully deceptive</span>
+                <span class="meter legend" aria-hidden="true"></span>
+                <span><strong>+2</strong> fully earnest</span>
+            </p>
+
+            <section>
+                <h3>FOR the Proposition</h3>
+
+                <figure>
+                    <!-- S2 owner: replace this file with the updated chart, keeping the same file name -->
+                    <img
+                        src="S2_growth_rates.png"
+                        alt="Grouped bar chart titled 'China is outgrowing America on every measure of innovation': average annual growth rates since 2000 for China and the U.S. across patents, research papers, R&amp;D spending, high-tech exports and IP royalties. China's bar is taller in every category."
+                    />
+                    <figcaption>
+                        <span class="todo-inline">[S2 owner: brief caption, covering the data, years and source.]</span>
+                    </figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <!--
+                    S2 owner: replace the .todo box below with a list in the same format as the
+                    AGAINST section. Copy this block once per decision (3 to 5 in total):
+
+                    <ul class="decisions">
+                        <li class="decision" style="--score: -1">
+                            <h4>
+                                Decision name
+                                <span class="score"><span class="meter" aria-hidden="true"></span>Score: −1</span>
+                            </h4>
+                            <p>Why it persuades, what worked or didn't, and what alternatives you considered.</p>
+                        </li>
+                    </ul>
+
+                    --score takes -2 to 2 in 0.5 steps; keep it matching the "Score:" text.
+                -->
+                <div class="todo">
+                    <p><strong>To fill in (S2 owner)</strong></p>
+                    <ul>
+                        <li>
+                            Replace <code>S2_growth_rates.png</code> with the updated chart. Per the TA's
+                            feedback, add x- and y-axis titles and one or two annotations that point out what
+                            readers should notice.
+                        </li>
+                        <li>Write the figure caption above.</li>
+                        <li>
+                            List 3–5 design decisions. Give each a score from −2 (fully deceptive) to +2 (fully
+                            earnest) in 0.5 steps, avoiding 0, plus a couple of sentences: why it persuades,
+                            what worked or didn't, and what alternatives you considered.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h3>AGAINST the Proposition</h3>
+
+                <figure>
+                    <img
+                        src="U1_IP_Income.png"
+                        alt="Line chart of IP income received from abroad, 2000 to 2020. The U.S. line rises from $43B to $114B while China's stays near zero and ends at $8.6B. The shaded gap between the lines is labeled as a $43B lead in 2000 and a $105B lead in 2020."
+                    />
+                    <figcaption>
+                        IP income received from abroad (charges for the use of intellectual property, receipts;
+                        BoP, current US$), United States and China, 2000–2020. The shaded area is the calculated
+                        U.S. lead (U.S. minus China). Source: World Bank World Development Indicators, September
+                        2021 snapshot.
+                    </figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul class="decisions">
+                    <li class="decision" style="--score: -1">
+                        <h4>
+                            Picking IP income as the battleground
+                            <span class="score"><span class="meter" aria-hidden="true"></span>Score: −1</span>
+                        </h4>
+                        <p>
+                            Charges for the use of intellectual property give the U.S. a 13× lead, and Figure 1
+                            uses the same series, so this chart reads as a direct rebuttal. The catch is that the
+                            indicator bundles patents with copyrights (film, music, software), trademarks and
+                            franchise fees, so the U.S. lead is not purely technological. We considered resident
+                            patent applications and high-tech exports instead, but China leads both (about 4.4×
+                            in 2019 and 5.3× in 2020), which would have undercut our side.
+                        </p>
+                    </li>
+
+                    <li class="decision" style="--score: 0.5">
+                        <h4>
+                            Absolute dollars on a linear, zero-based scale
+                            <span class="score"><span class="meter" aria-hidden="true"></span>Score: +0.5</span>
+                        </h4>
+                        <p>
+                            Plotting raw dollars on a conventional zero-based axis is the most literal encoding
+                            and lets readers check every value. It is also what flattens China's story: its IP
+                            income grew about 106-fold, from $0.08B to $8.6B, yet on this scale the red line barely
+                            leaves the floor. A log scale or an index (2000 = 100) would have shown China climbing
+                            far faster than the U.S., and a ratio chart would show the U.S. edge collapsing from
+                            541× to 13×; we rejected all three because they argue the other side. We scored this
+                            slightly earnest because nothing is distorted: the persuasion comes from what a linear
+                            scale emphasizes.
+                        </p>
+                    </li>
+
+                    <li class="decision" style="--score: -1">
+                        <h4>
+                            Calculating and shading the “lead”
+                            <span class="score"><span class="meter" aria-hidden="true"></span>Score: −1</span>
+                        </h4>
+                        <p>
+                            We added a calculated field, U.S. minus China, and made it the visual subject: the gap
+                            between the lines is shaded and bracketed at both ends (“$43B lead” in 2000, “$105B
+                            lead” in 2020). An absolute gap can keep widening even while the trailing country
+                            catches up quickly, which is exactly what happened here. Bracketing only 2000 and 2020
+                            also hides that the gap peaked at $115.7B in 2014 and has shrunk every year since 2017.
+                            We considered a third bracket at the 2014 peak but dropped it because it would draw
+                            attention to that recent narrowing.
+                        </p>
+                    </li>
+
+                    <li class="decision" style="--score: -1.5">
+                        <h4>
+                            A calm title that rests on nominal dollars
+                            <span class="score"><span class="meter" aria-hidden="true"></span>Score: −1.5</span>
+                        </h4>
+                        <p>
+                            “America's IP income lead has more than doubled since 2000” states a calculated fact
+                            ($43.4B to $105.5B is a 2.4× increase) in neutral wording, with no “dominates” or
+                            “crushes,” so it reads like reporting rather than advocacy. But it relies on current
+                            dollars: U.S. consumer prices rose about 50% from 2000 to 2020, so in real terms the
+                            lead grew by roughly 60%, not “more than doubled.” The y-axis title does say “current
+                            US$,” which keeps the chart technically accurate while counting on readers not to do
+                            the inflation math. Our earlier title, “America earns 13 times China's IP income,” was
+                            more defensible but invited the question of how fast that multiple is falling.
+                        </p>
+                    </li>
+
+                    <li class="decision" style="--score: 1.5">
+                        <h4>
+                            Earnest scaffolding: labels, definitions, source
+                            <span class="score"><span class="meter" aria-hidden="true"></span>Score: +1.5</span>
+                        </h4>
+                        <p>
+                            End-of-line labels ($114B, $8.6B) replace a legend, both axes are titled, the subtitle
+                            defines the measure in plain words, and the World Bank source and snapshot date are
+                            cited. Two annotations give readers concrete takeaways: the U.S. earns 13× China, and
+                            China's 2020 income is about a fifth of what the U.S. earned in 2000 (in nominal
+                            dollars, which if anything understates the gap). These choices are genuinely earnest
+                            and make the chart quick to read, but they also lend credibility to the framing choices
+                            above. Matching Figure 1's colors and typography lets the two charts be read side by
+                            side.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Final Reflection</h2>
+
+                <div class="todo">
+                    <p><strong>To fill in (write-up)</strong></p>
+                    <p>
+                        2–3 paragraphs on the design process across both visualizations: what was
+                        straightforward or difficult, what surprised you, how you now define “ethical analysis
+                        and visualization,” and what bounds (if any) separate acceptable persuasive choices from
+                        misleading ones.
+                    </p>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

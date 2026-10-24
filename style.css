@@ -70,7 +70,10 @@ img { max-width: 100%; display: block; height: auto; }
 .research-focus strong { display: block; font: 600 19px/1.25 var(--mono); }
 .research-focus small { display: block; margin-top: 6px; font: 12px/1.6 var(--sans); color: var(--muted); }
 .research-focus a:hover strong { color: var(--accent); }
-.focus-note { font: 14px/1.6 var(--mono); border-top: 1px solid var(--line); padding-top: 16px; color: var(--muted); }
+.focus-photo { display: flex; align-items: center; gap: 16px; border-top: 1px solid var(--line); padding-top: 16px; }
+.focus-photo img { width: 104px; flex: 0 0 104px; height: auto; border: 1px solid var(--line); }
+.focus-photo figcaption { font: 14px/1.5 var(--mono); color: var(--ink); }
+.focus-photo figcaption span { display: block; margin-top: 5px; font-size: 11px; color: var(--muted); }
 .home-work,.github-profile { border-top: 1px solid var(--line); padding-top: 27px; }
 .section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 26px; }
 .section-heading h2 { margin-top: 8px; }
@@ -195,7 +198,6 @@ form > .meta { margin-top: -10px; font: 12px var(--mono); }
   .hero-description { max-width: 58ch; }
   .research-focus { padding-top: 0; }
   .research-focus > a { padding: 14px 0; }
-  .focus-note { display: none; }
   .projects { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .home-work .projects { grid-template-columns: 1fr; }
   .home-work .projects > article { grid-template-columns: minmax(0,1fr) minmax(0,1.1fr); grid-template-rows: auto auto auto auto auto; grid-row: auto; gap: 12px 22px; }

@@ -59,7 +59,7 @@ For the Lab 3 submission, provide the repository and live website links, plus an
 
 The contact form uses `mailto:` and requires a configured email application.
 
-Image and font credits are listed in [ASSET_CREDITS.md](ASSET_CREDITS.md). The original home-page photograph is retained as an unused asset.
+Image and font credits are listed in [ASSET_CREDITS.md](ASSET_CREDITS.md). The original Hubble photograph remains visible on the home page with descriptive alternative text, preserving Lab 1's photo requirement.
 
 
 
@@ -82,7 +82,13 @@ Submit the repository link, deployed website link, and an MP4 screen recording o
 
 Suggested short narration (about 45–55 seconds):
 
-> For Lab 4, my twelve projects now come from one JSON file. JavaScript renders the cards and counts them automatically. I can search, filter by category and year, and expand a study. Every project has a numeric year. The home page reuses the same function to show the first three projects. Here are my live repository, gist, follower, and following counts from GitHub. I learned how sharing data and rendering functions keeps multiple pages consistent. For the Think About It question, clearing the container before rendering prevents duplicate cards when I filter or render again.
+> This is my updated portfolio for Lab Four. On the home page, JavaScript loads the first three projects from a shared JSON file. Below, GitHub's API provides my repository, gist, follower, and following counts.
+>
+> The Projects page renders all twelve projects and counts them automatically. Each has a numeric year. I can search, filter by category and year, and open project details.
+>
+> The most useful thing I learned is how reusable functions keep multiple pages consistent. For the Think About It question, I clear the container before rendering again, so filtering replaces the old cards instead of creating duplicates.
+
+Recording sequence: show the three selected projects and GitHub statistics on Home; open Projects and show the total of twelve; choose Research & systems, select 2026, search RoBERTa, and open the matching project study. Finish with the learning point and Think About It answer. Rehearse once and keep the MP4 at most 60 seconds.
 
 [Lab 4 instructions](https://dsc106.com/labs/lab04/)
 

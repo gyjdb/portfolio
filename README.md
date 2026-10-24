@@ -32,7 +32,7 @@ Use this directory as the repository root. In GitHub Pages settings, select the 
 - Flexbox navigation with equal space, a bottom border and margin, a current-page indicator, and hover styles.
 - A site-wide `--color-accent` custom property and inherited form typography.
 - A contact form using Grid and column subgrid; labels stack above fields on small screens.
-- A 12-card project gallery using an adaptive grid and row subgrid to align titles, images, and descriptions. Five cards summarize existing projects; seven are clearly marked as future coursework.
+- A 12-card project gallery using an adaptive grid and row subgrid to align titles, images, and descriptions. The gallery now includes research, completed and ongoing coursework, and two clearly identified upcoming placeholders.
 - Home-page project cards that also use row subgrid, so titles, descriptions, and tools line up across columns.
 - Responsive resume headings, dates, and skill categories, plus print styles.
 
@@ -59,7 +59,7 @@ For the Lab 3 submission, provide the repository and live website links, plus an
 
 The contact form uses `mailto:` and requires a configured email application.
 
-The home-page photograph is credited in [ASSET_CREDITS.md](ASSET_CREDITS.md).
+Image and font credits are listed in [ASSET_CREDITS.md](ASSET_CREDITS.md). The original home-page photograph is retained as an unused asset.
 
 
 
@@ -82,6 +82,16 @@ Submit the repository link, deployed website link, and an MP4 screen recording o
 
 Suggested short narration (about 45–55 seconds):
 
-> For Lab 4, I moved my project data into one JSON file. The Projects page creates all twelve cards with JavaScript and updates the count automatically. Each project has a year for the next lab. On the home page, the same rendering function displays the first three projects. This section fetches my public repository, gist, follower, and following counts from GitHub. The most useful thing I learned is that two pages can reuse the same data and rendering function. For the Think About It question, I clear the container before rendering so repeated calls replace the old cards instead of creating duplicates.
+> For Lab 4, my twelve projects now come from one JSON file. JavaScript renders the cards and counts them automatically. I can search, filter by category and year, and expand a study. Every project has a numeric year. The home page reuses the same function to show the first three projects. Here are my live repository, gist, follower, and following counts from GitHub. I learned how sharing data and rendering functions keeps multiple pages consistent. For the Think About It question, clearing the container before rendering prevents duplicate cards when I filter or render again.
 
 [Lab 4 instructions](https://dsc106.com/labs/lab04/)
+
+## Research redesign
+
+The main branch contains the approved research redesign. The completed Lab 4 version with the original visual style is preserved on the lab4-original branch.
+
+The design uses a self-hosted Inconsolata typeface, green accents, project result summaries, category/year/search filters, expandable project studies, and a shared layout across all four pages. The JSON data flow, homepage first-three selection, theme persistence, and GitHub API are retained. Research figures come from the existing project descriptions; diagrams are illustrative.
+
+Use preview.cmd or python preview.py to run the modular website locally. The optional design-review.html comparison is a local review artifact and is excluded from version control and deployment.
+
+Browser checks cover root and /portfolio/ hosting, all pages at 320/390/768/1440 pixels, themes, rendering, filters, deep links, and API/data failure states. Automated API checks use controlled responses for successful requests, zero counts, and failure cases.

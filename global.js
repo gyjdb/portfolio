@@ -1,4 +1,3 @@
-console.log('IT’S ALIVE!');
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -77,6 +76,7 @@ if (skipLink) {
   document.body.insertAdjacentHTML('afterbegin', colorSchemeHTML);
 }
 
+header?.append(document.querySelector('.color-scheme'));
 const select = document.querySelector('.color-scheme select');
 const colorSchemes = $$('option', select).map(option => option.value);
 
@@ -103,7 +103,6 @@ try {
 }
 
 select.addEventListener('input', event => {
-  console.log('color scheme changed to', event.target.value);
   setColorScheme(event.target.value);
   try {
     localStorage.colorScheme = event.target.value;
@@ -136,42 +135,44 @@ export async function fetchJSON(url) {
 
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
   if (!containerElement) return;
-  if (!Array.isArray(projects)) {
-    throw new TypeError('Project data must be an array.');
-  }
+  if (!Array.isArray(projects)) throw new TypeError('Project data must be an array.');
   if (!/^h[1-6]$/.test(headingLevel)) headingLevel = 'h2';
-
-  // Re-rendering replaces the previous cards instead of duplicating them.
   containerElement.replaceChildren();
   if (projects.length === 0) {
     const message = document.createElement('p');
     message.className = 'empty-message';
-    message.textContent = 'No projects to show yet.';
+    message.textContent = 'No projects match this selection. Try another filter or search.';
     containerElement.append(message);
     return;
   }
 
   for (const project of projects) {
     const article = document.createElement('article');
-    article.classList.toggle('placeholder', Boolean(project.placeholder));
+    article.className = 'project-card';
+    article.classList.toggle('project-placeholder', Boolean(project.placeholder));
     article.innerHTML = `
+      <div class="project-kicker"><span class="project-category"></span><span class="project-year"></span></div>
       <${headingLevel}></${headingLevel}>
       <img width="720" height="450" loading="lazy">
       <p class="project-description"></p>
+      <p class="project-result"></p>
+      <div class="project-footer"><span class="tools"></span></div>
     `;
-
+    article.querySelector('.project-category').textContent = project.category || 'Project';
+    article.querySelector('.project-year').textContent = project.year || 'Undated';
     const title = article.querySelector(headingLevel);
-    title.textContent = project.title || 'Untitled project';
+    title.textContent = project.displayTitle || project.title || 'Untitled project';
+    let projectURL;
     if (project.url) {
-      const url = new URL(project.url, import.meta.url);
-      if (['http:', 'https:'].includes(url.protocol)) {
+      const candidate = new URL(project.url, import.meta.url);
+      if (['http:', 'https:'].includes(candidate.protocol)) {
+        projectURL = candidate.href;
         const link = document.createElement('a');
-        link.href = url.href;
+        link.href = projectURL;
         link.textContent = title.textContent;
         title.replaceChildren(link);
       }
     }
-
     const image = article.querySelector('img');
     image.src = new URL(project.image || 'images/upcoming-project.svg', import.meta.url).href;
     image.alt = project.alt || project.title || 'Project illustration';
@@ -179,14 +180,28 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       image.src = new URL('images/upcoming-project.svg', import.meta.url).href;
       image.alt = 'Project illustration unavailable.';
     }, { once: true });
-
-    const description = article.querySelector('.project-description');
-    description.textContent = project.description || 'Description coming soon.';
-    const metadata = document.createElement('span');
-    metadata.className = 'tools';
-    const year = project.year ? `${project.year}` : 'Year not specified';
-    metadata.textContent = [year, project.tools].filter(Boolean).join(' / ');
-    description.append(metadata);
+    article.querySelector('.project-description').textContent = project.description || 'Description coming soon.';
+    const result = article.querySelector('.project-result');
+    if (project.resultValue) {
+      const value = document.createElement('strong');
+      value.textContent = project.resultValue;
+      result.append(value, document.createTextNode(` ${project.resultLabel || ''}`));
+    } else {
+      result.textContent = project.resultLabel || (project.placeholder ? 'Planned coursework' : 'Project notes');
+    }
+    article.querySelector('.tools').textContent = project.tools || '';
+    if (projectURL) {
+      const link = document.createElement('a');
+      link.href = projectURL;
+      link.textContent = '↗';
+      link.setAttribute('aria-label', `View ${project.title}`);
+      article.querySelector('.project-footer').append(link);
+    } else {
+      const label = document.createElement('span');
+      label.className = 'tools';
+      label.textContent = 'Planned';
+      article.querySelector('.project-footer').append(label);
+    }
     containerElement.append(article);
   }
 }

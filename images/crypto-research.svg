@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="450" viewBox="0 0 720 450">
-  <style>@media (prefers-color-scheme: dark) { [fill="#edf1ef"] { fill: #20303b; } [fill="#22566f"] { fill: #8fcde8; } [stroke="#22566f"] { stroke: #8fcde8; } [fill="#b6c5c9"] { fill: #3b4b56; } [stroke="#b6c5c9"] { stroke: #3b4b56; } [fill="#57636b"] { fill: #afbdc7; } }</style>
-  <rect width="720" height="450" fill="#edf1ef"/>
-  <g fill="#22566f" font-family="system-ui, sans-serif" font-size="22"><path d="M72 320H648M72 120V320" fill="none" stroke="#b6c5c9" stroke-width="2"/><path d="M72 262 123 231 174 250 225 184 276 207 327 158 378 181 429 128 480 167 531 147 582 203 648 174" fill="none" stroke="#22566f" stroke-width="6"/><rect x="444" y="104" width="204" height="216" fill="#22566f" opacity=".08"/><text x="80" y="365">Signal</text><text x="472" y="365">Validation</text></g>
+  <style>@media (prefers-color-scheme: dark) { [fill="#f4f7f3"] { fill: #1b291e; } [fill="#18753d"] { fill: #88d8a3; } [stroke="#18753d"] { stroke: #88d8a3; } [fill="#b9cdbd"] { fill: #425d49; } [stroke="#b9cdbd"] { stroke: #425d49; } [fill="#56665a"] { fill: #aebfb0; } }</style>
+  <rect width="720" height="450" fill="#f4f7f3"/>
+  <g fill="#18753d" font-family="system-ui, sans-serif" font-size="22"><path d="M72 320H648M72 120V320" fill="none" stroke="#b9cdbd" stroke-width="2"/><path d="M72 262 123 231 174 250 225 184 276 207 327 158 378 181 429 128 480 167 531 147 582 203 648 174" fill="none" stroke="#18753d" stroke-width="6"/><rect x="444" y="104" width="204" height="216" fill="#18753d" opacity=".08"/><text x="80" y="365">Signal</text><text x="472" y="365">Validation</text></g>
 </svg>

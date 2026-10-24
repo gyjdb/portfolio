@@ -6,3 +6,6 @@ __pycache__/
 *.zip
 CV.pdf
 
+
+# Self-contained local design comparison
+design-review.html

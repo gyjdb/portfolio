@@ -4,9 +4,14 @@
     "year": 2026,
     "image": "images/ner-tagging.svg",
     "alt": "Illustration of two rows of text tokens with highlighted character, location, and organization spans.",
-    "description": "A six-type NER study on a long Chinese web novel, training a RoBERTa tagger on weak labels and LLM teacher labels.",
+    "description": "Recognizing six entity types in Chinese fiction with a two-stage RoBERTa tagger, evaluated on a held-out silver-standard test set.",
     "tools": "Python · PyTorch · Chinese RoBERTa",
-    "url": "projects/#ner"
+    "url": "projects/#ner",
+    "displayTitle": "Named entities in Chinese fiction",
+    "category": "NLP research",
+    "group": "research",
+    "resultValue": "90.8%",
+    "resultLabel": "strict entity-level F1"
   },
   {
     "title": "Intraday Crypto Prediction and Time-Series Evaluation",
@@ -15,7 +20,12 @@
     "alt": "Illustration of a time-series research workflow, with a signal passing through validation.",
     "description": "Minute-level prediction for BTC, ETH, BNB, XRP, and SOL, with chronological splits and cost-aware backtests.",
     "tools": "Python · LightGBM · Logistic Regression",
-    "url": "projects/#crypto"
+    "url": "projects/#crypto",
+    "displayTitle": "Intraday crypto prediction",
+    "category": "Time series",
+    "group": "research",
+    "resultValue": "5 assets",
+    "resultLabel": "/ 3 forecast horizons"
   },
   {
     "title": "PUBG Match Placement Prediction",
@@ -24,7 +34,12 @@
     "alt": "Illustration of two model paths combining into one prediction.",
     "description": "Placement prediction on 1.5 million player records, with grouped validation and a LightGBM and CatBoost ensemble.",
     "tools": "Python · LightGBM · CatBoost",
-    "url": "projects/#pubg"
+    "url": "projects/#pubg",
+    "displayTitle": "Predicting match placement",
+    "category": "Machine learning",
+    "group": "research",
+    "resultValue": "1.5M",
+    "resultLabel": "player records / grouped validation"
   },
   {
     "title": "Blockchain Evidence System Reproduction",
@@ -33,7 +48,11 @@
     "alt": "Illustration of a frontend, backend, and connected ledger blocks.",
     "description": "An evidence-recording workflow connecting smart contracts, a Django backend, and a WeChat Mini Program.",
     "tools": "FISCO BCOS · WeBASE · Django",
-    "url": "projects/#blockchain"
+    "url": "projects/#blockchain",
+    "displayTitle": "Blockchain evidence system",
+    "category": "Systems",
+    "group": "research",
+    "resultLabel": "Contracts / backend / client"
   },
   {
     "title": "Deepfake Detection Model Optimization",
@@ -42,7 +61,11 @@
     "alt": "Illustration of an image tile grid and a highlighted feature region.",
     "description": "MobileNetV3 and GCBlock experiments examining classification performance, robustness, and inference time.",
     "tools": "Python · PyTorch · MobileNetV3",
-    "url": "projects/#deepfake"
+    "url": "projects/#deepfake",
+    "displayTitle": "Deepfake model optimization",
+    "category": "Computer vision",
+    "group": "research",
+    "resultLabel": "Performance and robustness evaluation"
   },
   {
     "title": "Personal Portfolio: HTML Foundations",
@@ -51,7 +74,10 @@
     "tools": "HTML",
     "url": "./",
     "image": "images/course-project.svg",
-    "alt": "Abstract outline of a project card."
+    "alt": "Abstract outline of a project card.",
+    "category": "DSC 106 / Lab 1",
+    "group": "coursework",
+    "resultLabel": "Semantic HTML foundations"
   },
   {
     "title": "Responsive Portfolio Layout",
@@ -60,7 +86,10 @@
     "tools": "HTML / CSS",
     "url": "projects/",
     "image": "images/course-project.svg",
-    "alt": "Abstract outline of a project card."
+    "alt": "Abstract outline of a project card.",
+    "category": "DSC 106 / Lab 2",
+    "group": "coursework",
+    "resultLabel": "Responsive grids and typography"
   },
   {
     "title": "Portfolio Navigation and Themes",
@@ -69,7 +98,10 @@
     "tools": "JavaScript / localStorage",
     "url": "./",
     "image": "images/course-project.svg",
-    "alt": "Abstract outline of a project card."
+    "alt": "Abstract outline of a project card.",
+    "category": "DSC 106 / Lab 3",
+    "group": "coursework",
+    "resultLabel": "Navigation and persistent themes"
   },
   {
     "title": "Data-Driven Portfolio",
@@ -78,7 +110,10 @@
     "tools": "JavaScript / JSON / GitHub API",
     "url": "./#github-heading",
     "image": "images/course-project.svg",
-    "alt": "Abstract outline of a project card."
+    "alt": "Abstract outline of a project card.",
+    "category": "DSC 106 / Lab 4",
+    "group": "coursework",
+    "resultLabel": "JSON rendering and GitHub API"
   },
   {
     "title": "Persuasive and Deceptive Visualization",
@@ -87,7 +122,10 @@
     "tools": "Data visualization / Group project",
     "url": "https://github.com/gyjdb/dsc106-project2",
     "image": "images/course-project.svg",
-    "alt": "Abstract outline of a project card."
+    "alt": "Abstract outline of a project card.",
+    "category": "DSC 106 / Project 2",
+    "group": "coursework",
+    "resultLabel": "In progress / group project"
   },
   {
     "title": "Categorical Data Visualization",
@@ -96,7 +134,10 @@
     "tools": "Planned: D3",
     "placeholder": true,
     "image": "images/upcoming-project.svg",
-    "alt": "Abstract outline of a project card."
+    "alt": "Abstract outline of a project card.",
+    "category": "Upcoming",
+    "group": "coursework",
+    "resultLabel": "Planned coursework"
   },
   {
     "title": "Quantitative Data Visualization",
@@ -105,6 +146,9 @@
     "tools": "Planned: D3",
     "placeholder": true,
     "image": "images/upcoming-project.svg",
-    "alt": "Abstract outline of a project card."
+    "alt": "Abstract outline of a project card.",
+    "category": "Upcoming",
+    "group": "coursework",
+    "resultLabel": "Planned coursework"
   }
 ]

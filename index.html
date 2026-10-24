@@ -7,6 +7,7 @@
   <title>Ethan Cai: Personal site and portfolio</title>
   <link rel="stylesheet" href="style.css">
   <script type="module" src="global.js"></script>
+  <script type="module" src="index.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -42,25 +43,21 @@
     </div>
     <a class="text-link" href="projects/index.html">View all projects <span aria-hidden="true">→</span></a>
   </div>
-  <div class="project-grid">
-  <article class="project-card">
-    <p class="eyebrow">01 / NLP research</p>
-    <h3><a href="projects/index.html#ner">Named Entity Recognition in Chinese Fiction</a></h3>
-    <p>A six-type NER study on a long Chinese web novel. A two-stage Chinese RoBERTa tagger reached 90.8% strict entity-level F1 on a held-out, silver-standard test set.</p>
-    <p class="tools">Python, PyTorch, Chinese RoBERTa</p>
-  </article>
-  <article class="project-card">
-    <p class="eyebrow">02 / Time-series research</p>
-    <h3><a href="projects/index.html#crypto">Intraday Crypto Prediction and Time-Series Evaluation</a></h3>
-    <p>A minute-level pipeline for five crypto assets at 1-, 5-, and 15-minute horizons, evaluated with chronological splits and cost-aware backtests.</p>
-    <p class="tools">Python, LightGBM, Logistic Regression</p>
-  </article>
-  <article class="project-card">
-    <p class="eyebrow">03 / Predictive modeling</p>
-    <h3><a href="projects/index.html#pubg">PUBG Match Placement Prediction</a></h3>
-    <p>LightGBM modeling on 1.5 million player records and 51 features, with grouped validation and a CatBoost ensemble.</p>
-    <p class="tools">Python, LightGBM, CatBoost</p>
-  </article>
+  <div class="projects" aria-live="polite" aria-busy="true">
+    <p class="loading-message">Loading projects...</p>
+  </div>
+  <noscript><p>Enable JavaScript to load projects and GitHub statistics.</p></noscript>
+</section>
+<section class="github-profile" aria-labelledby="github-heading">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Open source</p>
+      <h2 id="github-heading">GitHub activity</h2>
+    </div>
+    <a class="text-link" href="https://github.com/gyjdb">@gyjdb on GitHub</a>
+  </div>
+  <div id="profile-stats" aria-live="polite" aria-busy="true">
+    <p class="loading-message">Loading GitHub statistics...</p>
   </div>
 </section>
 <section class="background-strip" aria-labelledby="background-heading">

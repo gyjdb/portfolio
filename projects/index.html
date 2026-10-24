@@ -7,6 +7,7 @@
   <title>Projects | Ethan Cai</title>
   <link rel="stylesheet" href="../style.css">
   <script type="module" src="../global.js"></script>
+  <script type="module" src="projects.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -16,73 +17,15 @@
   <main id="main">
 <header class="page-intro">
   <p class="eyebrow">Research &amp; projects</p>
-  <h1>Projects<span class="accent">.</span></h1>
+  <h1 class="projects-title">Projects<span class="accent">.</span></h1>
   <p>Research and course projects in natural language processing, time-series prediction, machine learning, blockchain systems, and computer vision, with room for upcoming course work.</p>
 </header>
 <section class="project-gallery" aria-labelledby="gallery-heading">
   <h2 id="gallery-heading">Project gallery</h2>
-  <div class="projects">
-  <article>
-    <h2><a href="#ner">Named Entity Recognition in Chinese Fiction</a></h2>
-    <img src="../images/ner-tagging.svg" width="720" height="450" alt="Illustration of two rows of text tokens with highlighted character, location, and organization spans.">
-    <p>A six-type NER study on a long Chinese web novel, training a RoBERTa tagger on weak labels and LLM teacher labels.<span class="tools">Python · PyTorch · Chinese RoBERTa</span></p>
-  </article>
-  <article>
-    <h2><a href="#crypto">Intraday Crypto Prediction and Time-Series Evaluation</a></h2>
-    <img src="../images/crypto-research.svg" width="720" height="450" alt="Illustration of a time-series research workflow, with a signal passing through validation.">
-    <p>Minute-level prediction for BTC, ETH, BNB, XRP, and SOL, with chronological splits and cost-aware backtests.<span class="tools">Python · LightGBM · Logistic Regression</span></p>
-  </article>
-  <article>
-    <h2><a href="#pubg">PUBG Match Placement Prediction</a></h2>
-    <img src="../images/prediction-models.svg" width="720" height="450" alt="Illustration of two model paths combining into one prediction.">
-    <p>Placement prediction on 1.5 million player records, with grouped validation and a LightGBM and CatBoost ensemble.<span class="tools">Python · LightGBM · CatBoost</span></p>
-  </article>
-  <article>
-    <h2><a href="#blockchain">Blockchain Evidence System Reproduction</a></h2>
-    <img src="../images/blockchain-system.svg" width="720" height="450" alt="Illustration of a frontend, backend, and connected ledger blocks.">
-    <p>An evidence-recording workflow connecting smart contracts, a Django backend, and a WeChat Mini Program.<span class="tools">FISCO BCOS · WeBASE · Django</span></p>
-  </article>
-  <article>
-    <h2><a href="#deepfake">Deepfake Detection Model Optimization</a></h2>
-    <img src="../images/computer-vision.svg" width="720" height="450" alt="Illustration of an image tile grid and a highlighted feature region.">
-    <p>MobileNetV3 and GCBlock experiments examining classification performance, robustness, and inference time.<span class="tools">Python · PyTorch · MobileNetV3</span></p>
-  </article>
-  <article class="placeholder">
-    <h2>Course project 06</h2>
-    <img src="../images/upcoming-project.svg" width="720" height="450" alt="Placeholder for a future course project." loading="lazy">
-    <p>A place for future DSC 106 work. A project summary and visualization will be added after the assignment is complete.<span class="tools">Upcoming coursework</span></p>
-  </article>
-  <article class="placeholder">
-    <h2>Course project 07</h2>
-    <img src="../images/upcoming-project.svg" width="720" height="450" alt="Placeholder for a future course project." loading="lazy">
-    <p>A place for future DSC 106 work. A project summary and visualization will be added after the assignment is complete.<span class="tools">Upcoming coursework</span></p>
-  </article>
-  <article class="placeholder">
-    <h2>Course project 08</h2>
-    <img src="../images/upcoming-project.svg" width="720" height="450" alt="Placeholder for a future course project." loading="lazy">
-    <p>A place for future DSC 106 work. A project summary and visualization will be added after the assignment is complete.<span class="tools">Upcoming coursework</span></p>
-  </article>
-  <article class="placeholder">
-    <h2>Course project 09</h2>
-    <img src="../images/upcoming-project.svg" width="720" height="450" alt="Placeholder for a future course project." loading="lazy">
-    <p>A place for future DSC 106 work. A project summary and visualization will be added after the assignment is complete.<span class="tools">Upcoming coursework</span></p>
-  </article>
-  <article class="placeholder">
-    <h2>Course project 10</h2>
-    <img src="../images/upcoming-project.svg" width="720" height="450" alt="Placeholder for a future course project." loading="lazy">
-    <p>A place for future DSC 106 work. A project summary and visualization will be added after the assignment is complete.<span class="tools">Upcoming coursework</span></p>
-  </article>
-  <article class="placeholder">
-    <h2>Course project 11</h2>
-    <img src="../images/upcoming-project.svg" width="720" height="450" alt="Placeholder for a future course project." loading="lazy">
-    <p>A place for future DSC 106 work. A project summary and visualization will be added after the assignment is complete.<span class="tools">Upcoming coursework</span></p>
-  </article>
-  <article class="placeholder">
-    <h2>Course project 12</h2>
-    <img src="../images/upcoming-project.svg" width="720" height="450" alt="Placeholder for a future course project." loading="lazy">
-    <p>A place for future DSC 106 work. A project summary and visualization will be added after the assignment is complete.<span class="tools">Upcoming coursework</span></p>
-  </article>
+  <div class="projects" aria-live="polite" aria-busy="true">
+    <p class="loading-message">Loading projects...</p>
   </div>
+  <noscript><p>Enable JavaScript to load the project gallery. Selected project details are available below.</p></noscript>
 </section>
 <h2 class="project-details-heading" id="project-details-heading">Selected project details</h2>
 <nav class="project-index" aria-label="Project shortcuts">

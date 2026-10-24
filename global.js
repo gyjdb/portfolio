@@ -123,3 +123,74 @@ form?.addEventListener('submit', event => {
   }
   location.href = `${form.action}?${parameters.join('&')}`;
 });
+
+
+// Lab 4: share data loading and project rendering between pages.
+export async function fetchJSON(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Unable to load data (${response.status} ${response.statusText}).`);
+  }
+  return response.json();
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  if (!containerElement) return;
+  if (!Array.isArray(projects)) {
+    throw new TypeError('Project data must be an array.');
+  }
+  if (!/^h[1-6]$/.test(headingLevel)) headingLevel = 'h2';
+
+  // Re-rendering replaces the previous cards instead of duplicating them.
+  containerElement.replaceChildren();
+  if (projects.length === 0) {
+    const message = document.createElement('p');
+    message.className = 'empty-message';
+    message.textContent = 'No projects to show yet.';
+    containerElement.append(message);
+    return;
+  }
+
+  for (const project of projects) {
+    const article = document.createElement('article');
+    article.classList.toggle('placeholder', Boolean(project.placeholder));
+    article.innerHTML = `
+      <${headingLevel}></${headingLevel}>
+      <img width="720" height="450" loading="lazy">
+      <p class="project-description"></p>
+    `;
+
+    const title = article.querySelector(headingLevel);
+    title.textContent = project.title || 'Untitled project';
+    if (project.url) {
+      const url = new URL(project.url, import.meta.url);
+      if (['http:', 'https:'].includes(url.protocol)) {
+        const link = document.createElement('a');
+        link.href = url.href;
+        link.textContent = title.textContent;
+        title.replaceChildren(link);
+      }
+    }
+
+    const image = article.querySelector('img');
+    image.src = new URL(project.image || 'images/upcoming-project.svg', import.meta.url).href;
+    image.alt = project.alt || project.title || 'Project illustration';
+    image.addEventListener('error', () => {
+      image.src = new URL('images/upcoming-project.svg', import.meta.url).href;
+      image.alt = 'Project illustration unavailable.';
+    }, { once: true });
+
+    const description = article.querySelector('.project-description');
+    description.textContent = project.description || 'Description coming soon.';
+    const metadata = document.createElement('span');
+    metadata.className = 'tools';
+    const year = project.year ? `${project.year}` : 'Year not specified';
+    metadata.textContent = [year, project.tools].filter(Boolean).join(' / ');
+    description.append(metadata);
+    containerElement.append(article);
+  }
+}
+
+export function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${encodeURIComponent(username)}`);
+}

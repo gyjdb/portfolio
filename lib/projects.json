@@ -1,0 +1,110 @@
+[
+  {
+    "title": "Named Entity Recognition in Chinese Fiction",
+    "year": 2026,
+    "image": "images/ner-tagging.svg",
+    "alt": "Illustration of two rows of text tokens with highlighted character, location, and organization spans.",
+    "description": "A six-type NER study on a long Chinese web novel, training a RoBERTa tagger on weak labels and LLM teacher labels.",
+    "tools": "Python · PyTorch · Chinese RoBERTa",
+    "url": "projects/#ner"
+  },
+  {
+    "title": "Intraday Crypto Prediction and Time-Series Evaluation",
+    "year": 2025,
+    "image": "images/crypto-research.svg",
+    "alt": "Illustration of a time-series research workflow, with a signal passing through validation.",
+    "description": "Minute-level prediction for BTC, ETH, BNB, XRP, and SOL, with chronological splits and cost-aware backtests.",
+    "tools": "Python · LightGBM · Logistic Regression",
+    "url": "projects/#crypto"
+  },
+  {
+    "title": "PUBG Match Placement Prediction",
+    "year": 2025,
+    "image": "images/prediction-models.svg",
+    "alt": "Illustration of two model paths combining into one prediction.",
+    "description": "Placement prediction on 1.5 million player records, with grouped validation and a LightGBM and CatBoost ensemble.",
+    "tools": "Python · LightGBM · CatBoost",
+    "url": "projects/#pubg"
+  },
+  {
+    "title": "Blockchain Evidence System Reproduction",
+    "year": 2025,
+    "image": "images/blockchain-system.svg",
+    "alt": "Illustration of a frontend, backend, and connected ledger blocks.",
+    "description": "An evidence-recording workflow connecting smart contracts, a Django backend, and a WeChat Mini Program.",
+    "tools": "FISCO BCOS · WeBASE · Django",
+    "url": "projects/#blockchain"
+  },
+  {
+    "title": "Deepfake Detection Model Optimization",
+    "year": 2024,
+    "image": "images/computer-vision.svg",
+    "alt": "Illustration of an image tile grid and a highlighted feature region.",
+    "description": "MobileNetV3 and GCBlock experiments examining classification performance, robustness, and inference time.",
+    "tools": "Python · PyTorch · MobileNetV3",
+    "url": "projects/#deepfake"
+  },
+  {
+    "title": "Personal Portfolio: HTML Foundations",
+    "year": 2026,
+    "description": "DSC 106 Lab 1: build the home, projects, resume, and contact pages with semantic HTML.",
+    "tools": "HTML",
+    "url": "./",
+    "image": "images/course-project.svg",
+    "alt": "Abstract outline of a project card."
+  },
+  {
+    "title": "Responsive Portfolio Layout",
+    "year": 2026,
+    "description": "DSC 106 Lab 2: style the portfolio with responsive grids, shared typography, and aligned project cards.",
+    "tools": "HTML / CSS",
+    "url": "projects/",
+    "image": "images/course-project.svg",
+    "alt": "Abstract outline of a project card."
+  },
+  {
+    "title": "Portfolio Navigation and Themes",
+    "year": 2026,
+    "description": "DSC 106 Lab 3: generate navigation with JavaScript and save the selected light, dark, or automatic theme.",
+    "tools": "JavaScript / localStorage",
+    "url": "./",
+    "image": "images/course-project.svg",
+    "alt": "Abstract outline of a project card."
+  },
+  {
+    "title": "Data-Driven Portfolio",
+    "year": 2026,
+    "description": "DSC 106 Lab 4: render project cards from JSON and display live GitHub profile statistics.",
+    "tools": "JavaScript / JSON / GitHub API",
+    "url": "./#github-heading",
+    "image": "images/course-project.svg",
+    "alt": "Abstract outline of a project card."
+  },
+  {
+    "title": "Persuasive and Deceptive Visualization",
+    "year": 2026,
+    "description": "DSC 106 Project 2: ongoing group work exploring how visual choices affect the interpretation of data. My focus is the US portion.",
+    "tools": "Data visualization / Group project",
+    "url": "https://github.com/gyjdb/dsc106-project2",
+    "image": "images/course-project.svg",
+    "alt": "Abstract outline of a project card."
+  },
+  {
+    "title": "Categorical Data Visualization",
+    "year": 2026,
+    "description": "Placeholder for upcoming DSC 106 work on categorical data. The visualization will be added after completion.",
+    "tools": "Planned: D3",
+    "placeholder": true,
+    "image": "images/upcoming-project.svg",
+    "alt": "Abstract outline of a project card."
+  },
+  {
+    "title": "Quantitative Data Visualization",
+    "year": 2026,
+    "description": "Placeholder for upcoming DSC 106 work on quantitative data. The visualization will be added after completion.",
+    "tools": "Planned: D3",
+    "placeholder": true,
+    "image": "images/upcoming-project.svg",
+    "alt": "Abstract outline of a project card."
+  }
+]

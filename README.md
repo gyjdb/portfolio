@@ -12,6 +12,8 @@ Personal portfolio for DSC 106, built with HTML, CSS, and JavaScript.
 
 ## Run locally
 
+On Windows, double-click `preview.cmd` to start a local server and open your browser. Keep the terminal window open while reviewing. Alternatively, run `python preview.py`.
+
 Serve this directory with a local HTTP server (JavaScript modules do not work when opening HTML files directly):
 
 ```sh
@@ -59,3 +61,27 @@ The contact form uses `mailto:` and requires a configured email application.
 
 The home-page photograph is credited in [ASSET_CREDITS.md](ASSET_CREDITS.md).
 
+
+
+## Lab 4: data-driven projects and GitHub statistics
+
+- `lib/projects.json` holds all 12 project cards, including existing research, DSC 106 Labs 1–4, the ongoing Project 2, and two clearly identified upcoming placeholders.
+- Every entry includes a numeric `year`. Existing project dates supply the 2024–2026 range; coursework uses 2026.
+- `global.js` exports `fetchJSON`, `renderProjects`, and `fetchGitHubData`.
+- `projects/projects.js` renders all cards and updates the title with the project count.
+- `index.js` renders the first three entries as selected work using `h3` headings, and fetches live public repos, public gists, followers, and following for `gyjdb`. The JSON order determines the selected projects; it is not automatically sorted by year.
+- Local asset paths resolve relative to `global.js`, so cards work at both the site root and the GitHub Pages `/portfolio/` prefix.
+- Loading, empty, and error states are included. A failed GitHub request does not prevent project rendering, and zero followers/following display as zero.
+- Existing theme controls, navigation, contact form, and detailed project write-ups remain available.
+
+Run the HTTP server as described above; opening an HTML file directly will not load modules or JSON.
+
+### Submission
+
+Submit the repository link, deployed website link, and an MP4 screen recording of at most one minute. Narrate the new JavaScript features, one interesting thing you learned, and one Think About It answer. The tutorial also asks classmates to follow one another, with at least three followers and three following; the site displays the account's actual API data.
+
+Suggested short narration (about 45–55 seconds):
+
+> For Lab 4, I moved my project data into one JSON file. The Projects page creates all twelve cards with JavaScript and updates the count automatically. Each project has a year for the next lab. On the home page, the same rendering function displays the first three projects. This section fetches my public repository, gist, follower, and following counts from GitHub. The most useful thing I learned is that two pages can reuse the same data and rendering function. For the Think About It question, I clear the container before rendering so repeated calls replace the old cards instead of creating duplicates.
+
+[Lab 4 instructions](https://dsc106.com/labs/lab04/)

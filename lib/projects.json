@@ -130,14 +130,14 @@
   {
     "title": "Categorical Data Visualization",
     "year": 2026,
-    "description": "Placeholder for upcoming DSC 106 work on categorical data. The visualization will be added after completion.",
-    "tools": "Planned: D3",
-    "placeholder": true,
-    "image": "images/upcoming-project.svg",
+    "description": "DSC 106 Lab 5: a D3 pie chart of projects per year that filters this archive together with search.",
+    "tools": "JavaScript / D3 / SVG",
+    "url": "projects/#projects-by-year",
+    "image": "images/course-project.svg",
     "alt": "Abstract outline of a project card.",
-    "category": "Upcoming",
+    "category": "DSC 106 / Lab 5",
     "group": "coursework",
-    "resultLabel": "Planned coursework"
+    "resultLabel": "Pie chart, legend, and year filter"
   },
   {
     "title": "Quantitative Data Visualization",

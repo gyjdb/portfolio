@@ -101,3 +101,37 @@ The design uses a self-hosted Inconsolata typeface, green accents, project resul
 Use preview.cmd or python preview.py to run the modular website locally. The optional design-review.html comparison is a local review artifact and is excluded from version control and deployment.
 
 Browser checks cover root and /portfolio/ hosting, all pages at 320/390/768/1440 pixels, themes, rendering, filters, deep links, and API/data failure states. Automated API checks use controlled responses for successful requests, zero counts, and failure cases.
+
+## Lab 5: categorical data with D3
+
+- The Projects page draws a D3 pie chart of projects per year. `d3.rollups` counts the projects in each year, `d3.pie` turns the counts into angles, and `d3.arc` draws each slice as an SVG path.
+- D3 also builds the legend. Each entry shows a color swatch, the year, and its project count, so every value can be read without hovering.
+- Search updates the cards, the pie chart, and the legend as you type. It ignores case and covers titles, descriptions, categories, tools, years, and results.
+- Clicking a slice or a legend entry shows only that year's projects; clicking it again shows every year. The selected slice moves out slightly and the others turn gray. Legend entries are buttons with `aria-pressed`, so the year filter also works from the keyboard. They replace the Lab 4 year dropdown.
+- Hovering a slice highlights its legend entry, and hovering or focusing a legend entry highlights its slice.
+- Each year keeps its color when filters change. The colors are one green ramp built from the site's accent: the newest year is darkest in the light theme and lightest in the dark theme. Both ramps were checked for evenly separated steps and enough contrast against the page.
+- The Lab 5 project card now describes this chart instead of a placeholder.
+
+### Step 5.4: combining search and the pie filter
+
+In the lab's starter code, the search listener filters the full `projects` array by the query alone, and the slice click handler filters the full array by the year alone. Each handler starts again from every project, so whichever runs last discards the other filter: search, then click a slice, and the search is ignored.
+
+Here the query, the area tab, and the selected year are shared state, applied together in `updateProjects()` in `projects/projects.js`. The search box, the area tabs, and the slice and legend clicks all call it. The pie counts the projects that match the area and search; the selected year then narrows the cards. The selection is stored as a year rather than a slice index, because slice indexes shift when a search removes a year.
+
+### Submission
+
+Submit the repository link, the deployed website link, and a narrated screen recording of at most one minute, recorded on a computer. Show the visualization, interact with it, explain the Step 5.4 issue and which lines fix it, and share the most interesting thing you learned. Showing the fixed interaction earns 10% extra credit.
+
+Suggested short narration (about 50 seconds):
+
+> This is my portfolio for Lab Five. The Projects page now has a D3 pie chart of projects per year, with a legend showing each year's count.
+>
+> Hovering a slice highlights its legend entry. Clicking a slice or a year filters the cards, and clicking again clears it. Search updates the cards and the chart together.
+>
+> In the lab's starter code, searching and then clicking a slice doesn't combine, because each handler re-filters the full project list by its own condition. I keep the query, area, and year as shared state and apply all three in updateProjects, so searching Python and clicking 2025 shows only the two 2025 projects that use Python.
+>
+> The most interesting thing I learned is how D3's pie and arc generators turn plain counts into SVG paths.
+
+Recording sequence: open Projects; hover the 2025 slice, click it, then click it again; type Python in the search and click the 2025 slice; show `updateProjects()` in `projects/projects.js`; finish with the learning point. Rehearse once and keep the recording at most 60 seconds.
+
+[Lab 5 instructions](https://dsc106.com/labs/lab05/)

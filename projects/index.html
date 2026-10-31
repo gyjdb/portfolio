@@ -32,10 +32,13 @@
     <div class="project-search">
       <label class="visually-hidden" for="project-search">Search projects</label>
       <input id="project-search" type="search" placeholder="Search projects..." autocomplete="off">
-      <label class="visually-hidden" for="project-year">Filter by year</label>
-      <select id="project-year"><option value="all">All years</option></select>
     </div>
   </div>
+  <figure class="year-chart" id="projects-by-year" hidden>
+    <figcaption class="year-chart-caption"><span class="eyebrow">Projects by year</span><span class="year-chart-hint">Select a slice or a year to filter. Select it again for every year.</span></figcaption>
+    <svg id="projects-pie-plot" viewBox="-50 -50 100 100" aria-hidden="true"></svg>
+    <ul class="legend" aria-label="Filter projects by year"></ul>
+  </figure>
   <p class="results-count" id="results-count" role="status" aria-live="polite">Loading the archive...</p>
   <div class="projects" aria-live="polite" aria-busy="true">
     <p class="loading-message">Loading projects...</p>

@@ -142,13 +142,13 @@
   {
     "title": "Quantitative Data Visualization",
     "year": 2026,
-    "description": "Placeholder for upcoming DSC 106 work on quantitative data. The visualization will be added after completion.",
-    "tools": "Planned: D3",
-    "placeholder": true,
-    "image": "images/upcoming-project.svg",
+    "description": "DSC 106 Lab 6: a D3 scatterplot of this site's commits, with code statistics, tooltips, and brushing.",
+    "tools": "JavaScript / D3 / SVG",
+    "url": "meta/",
+    "image": "images/course-project.svg",
     "alt": "Abstract outline of a project card.",
-    "category": "Upcoming",
+    "category": "DSC 106 / Lab 6",
     "group": "coursework",
-    "resultLabel": "Planned coursework"
+    "resultLabel": "Commit scatterplot and brushing"
   }
 ]

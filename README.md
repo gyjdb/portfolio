@@ -9,6 +9,7 @@ Personal portfolio for DSC 106, built with HTML, CSS, and JavaScript.
 - Projects: NLP research, time-series prediction, predictive modeling, blockchain systems, and computer vision.
 - Resume: education, experience, and technical skills.
 - Contact: email form.
+- Meta: statistics and a commit chart generated from this repository's own code.
 
 ## Run locally
 
@@ -135,3 +136,32 @@ Suggested short narration (about 50 seconds):
 Recording sequence: open Projects; hover the 2025 slice, click it, then click it again; type Python in the search and click the 2025 slice; show `updateProjects()` in `projects/projects.js`; finish with the learning point. Rehearse once and keep the recording at most 60 seconds.
 
 [Lab 5 instructions](https://dsc106.com/labs/lab05/)
+
+## Lab 6: quantitative data with D3
+
+- A new Meta page, linked from the navigation, reads `meta/loc.csv` and turns its rows into one object per commit (`meta/main.js`).
+- The summary shows total lines of code, total commits, file count, average file length, longest line, and the busiest time of day.
+- A D3 scatterplot places each commit by date and time of day. Dot area is proportional to the lines the commit still has in the site, using a square root scale, and small dots are drawn on top so they can be hovered.
+- Hovering a dot shows a tooltip with the commit link, date, time, author, and lines. It stays open if the mouse moves onto it, so the link can be clicked.
+- Dragging across the chart brushes commits. The panel beside the chart shows how many are selected and their lines per language, selected dots keep their color, and the rest turn gray.
+- The chart also has a table view with the same commits for keyboard and screen reader users. Brushing itself needs a mouse or touch.
+- The chart is drawn at the width of its container when the page loads, so axis text stays readable on phones.
+
+Generated files: `node_modules/` is ignored; `meta/loc.csv` is committed. The CSV comes from `git blame`, so it only includes commits that still have lines in the site. Regenerate it after each code commit, then commit the CSV:
+
+```sh
+npm install
+npx elocuent -d . -o meta/loc.csv --spaces 2
+```
+
+### Submission
+
+Record a narrated mp4 of at most one minute on a computer: present the visualizations, interact with them, then share the most interesting thing you learned.
+
+Suggested short narration (about 40 seconds):
+
+> This is my Lab 6 Meta page. It shows stats about my site's code and a D3 scatterplot of my commits by date and time of day. Bigger dots touched more lines. Hovering a dot shows its details in a tooltip. Dragging across the chart selects commits, and the panel shows how many and which languages. The most interesting thing I learned is that dot size needs a square root scale, because area grows with the square of the radius.
+
+Recording sequence: open Meta and show the summary; point to a large and a small dot; hover one dot; drag across several dots and show the selection panel; finish with the learning point.
+
+[Lab 6 instructions](https://dsc106.com/labs/lab06/)

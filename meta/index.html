@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Statistics about the code behind Ethan Cai’s portfolio, with a chart of when each commit was made.">
+  <title>Meta | Ethan Cai</title>
+  <link rel="preload" href="../fonts/inconsolata-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script type="module" src="../global.js"></script>
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <a class="wordmark" href="../" aria-label="Ethan Cai, home"><span class="wordmark-symbol" aria-hidden="true">ec/</span><span>Ethan Cai</span></a>
+  </header>
+  <main id="main">
+<header class="page-intro">
+  <p class="eyebrow">Code / commits / lines</p>
+  <h1>Meta</h1>
+  <p>What this site’s own code looks like: how big it is, and when each part of it was written. The numbers come from running git blame on every line.</p>
+</header>
+<section aria-labelledby="stats-heading">
+  <h2 id="stats-heading" class="visually-hidden">Code summary</h2>
+  <div id="stats" aria-busy="true"><p class="loading-message">Loading code statistics...</p></div>
+</section>
+<section class="commit-section" aria-labelledby="chart-heading">
+  <h2 id="chart-heading">Commits by time of day</h2>
+  <p class="chart-note">Each dot is a commit that still has lines in the site. Larger dots touched more lines.</p>
+  <div class="commit-view">
+    <div id="chart"></div>
+    <aside class="selection-panel" aria-label="Selected commits">
+      <p class="eyebrow">Selection</p>
+      <p id="selection-count">No commits selected</p>
+      <p class="selection-hint">Drag across the chart to select commits. Click the chart to clear.</p>
+      <dl id="language-breakdown" class="language-list"></dl>
+    </aside>
+  </div>
+  <details class="project-study commit-table">
+    <summary>View commits as a table</summary>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">Commit</th><th scope="col">Date and time</th><th scope="col">Author</th><th scope="col">Lines</th></tr></thead>
+        <tbody id="commit-rows"></tbody>
+      </table>
+    </div>
+  </details>
+  <dl id="commit-tooltip" class="info tooltip" hidden>
+    <dt>Commit</dt>
+    <dd><a href="" id="commit-link" target="_blank" rel="noopener noreferrer"></a></dd>
+    <dt>Date</dt>
+    <dd id="commit-date"></dd>
+    <dt>Time</dt>
+    <dd id="commit-time"></dd>
+    <dt>Author</dt>
+    <dd id="commit-author"></dd>
+    <dt>Lines</dt>
+    <dd id="commit-lines"></dd>
+  </dl>
+</section>
+  </main>
+  <footer class="site-footer">
+    <p>Ethan Cai <span aria-hidden="true">/</span> La Jolla, California</p>
+    <p>Research &amp; coursework <span aria-hidden="true">·</span> DSC 106</p>
+  </footer>
+</body>
+</html>

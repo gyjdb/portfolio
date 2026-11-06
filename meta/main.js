@@ -99,9 +99,12 @@ function renderLanguageBreakdown(selectedCommits) {
   }
 }
 
-function renderScatterPlot(commits) {
-  // Draw at the container's real size so axis text stays readable on phones instead of shrinking with a fixed viewBox.
-  const width = document.querySelector('#chart').clientWidth;
+function renderScatterPlot(commits, width) {
+  // A redraw replaces the old chart, and its brush selection goes with it.
+  updateTooltipVisibility(false);
+  renderSelectionCount([]);
+  renderLanguageBreakdown([]);
+
   const height = Math.max(340, width * 0.6);
   const margin = { top: 12, right: 16, bottom: 30, left: 44 };
   const usableArea = {
@@ -114,6 +117,7 @@ function renderScatterPlot(commits) {
   };
 
   const svg = d3.select('#chart')
+    .html('')
     .append('svg')
     .attr('viewBox', `0 0 ${width} ${height}`)
     .attr('role', 'img')
@@ -211,8 +215,22 @@ try {
   const data = await loadData();
   const commits = processCommits(data);
   renderCommitInfo(data, commits);
-  renderScatterPlot(commits);
   renderCommitTable(commits);
+
+  // Draw at the container's real size so axis text stays readable on phones instead of shrinking with a fixed viewBox.
+  // The page can load before the container has a width, so wait for one, and redraw when it changes.
+  // Small changes are ignored so a scrollbar appearing can't start a redraw loop.
+  const chart = document.querySelector('#chart');
+  let drawnWidth = 0;
+  function drawChart() {
+    const width = chart.clientWidth;
+    if (width > 0 && Math.abs(width - drawnWidth) >= 24) {
+      drawnWidth = width;
+      renderScatterPlot(commits, width);
+    }
+  }
+  drawChart();
+  new ResizeObserver(drawChart).observe(chart);
 } catch (error) {
   console.error('Could not load code statistics:', error);
   statsContainer.textContent = 'Code statistics could not be loaded. Please refresh to try again.';

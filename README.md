@@ -145,7 +145,7 @@ Recording sequence: open Projects; hover the 2025 slice, click it, then click it
 - Hovering a dot shows a tooltip with the commit link, date, time, author, and lines. It stays open if the mouse moves onto it, so the link can be clicked.
 - Dragging across the chart brushes commits. The panel beside the chart shows how many are selected and their lines per language, selected dots keep their color, and the rest turn gray.
 - The chart also has a table view with the same commits for keyboard and screen reader users. Brushing itself needs a mouse or touch.
-- The chart is drawn at the width of its container when the page loads, so axis text stays readable on phones.
+- The chart is drawn at the width of its container, so axis text stays readable on phones, and redrawn when that width changes, which clears any selection.
 
 Generated files: `node_modules/` is ignored; `meta/loc.csv` is committed. The CSV comes from `git blame`, so it only includes commits that still have lines in the site. Regenerate it after each code commit, then commit the CSV:
 

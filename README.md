@@ -6,7 +6,7 @@ Personal portfolio for DSC 106, built with HTML, CSS, and JavaScript.
 ## Pages
 
 - Home: introduction and selected projects.
-- Projects: NLP research, time-series prediction, predictive modeling, blockchain systems, and computer vision.
+- Projects: NLP research, time-series prediction, predictive modeling, blockchain systems, computer vision, and DSC 106 coursework.
 - Resume: education, experience, and technical skills.
 - Contact: email form.
 - Meta: statistics and a commit chart generated from this repository's own code.
@@ -33,11 +33,11 @@ Use this directory as the repository root. In GitHub Pages settings, select the 
 - Flexbox navigation with equal space, a bottom border and margin, a current-page indicator, and hover styles.
 - A site-wide `--color-accent` custom property and inherited form typography.
 - A contact form using Grid and column subgrid; labels stack above fields on small screens.
-- A 12-card project gallery using an adaptive grid and row subgrid to align titles, images, and descriptions. The gallery now includes research, completed and ongoing coursework, and two clearly identified upcoming placeholders.
+- A 13-card project gallery using an adaptive grid and row subgrid to align titles, images, and descriptions. The gallery now includes research and coursework, and every card has its own illustration.
 - Home-page project cards that also use row subgrid, so titles, descriptions, and tools line up across columns.
 - Responsive resume headings, dates, and skill categories, plus print styles.
 
-The project thumbnails are original SVG illustrations of the project workflows; they do not display measured results.
+The project thumbnails are original SVG illustrations of the project workflows; they do not display measured results. The Bikewatching card is the exception: it shows a screenshot of the map.
 
 For the Lab 2 submission, provide the repository link and an MP4 screen recording of at most one minute. Verbally show the personalized pages, resize the browser, and explain one interesting CSS concept you learned.
 
@@ -45,7 +45,7 @@ For the Lab 2 submission, provide the repository link and an MP4 screen recordin
 
 ## Lab 3: JavaScript interactions
 
-- All four pages load the shared `global.js` module.
+- Every page loads the shared `global.js` module.
 - Navigation is generated from one page list. The current page receives a visible underline and `aria-current="page"`; external navigation links open in a new tab.
 - `BASE_PATH` is read from where `global.js` is served (`/` locally, `/portfolio/` on GitHub Pages), so both local hosting and the `/portfolio/` GitHub Pages path work. Directory URLs and `index.html` URLs highlight the same page.
 - The top-right theme control offers Automatic, Light, and Dark. Automatic follows the operating system and shows which scheme it currently resolves to; `localStorage` keeps the selection across refreshes and page navigation.
@@ -66,7 +66,7 @@ Image and font credits are listed in [ASSET_CREDITS.md](ASSET_CREDITS.md). The o
 
 ## Lab 4: data-driven projects and GitHub statistics
 
-- `lib/projects.json` holds all 12 project cards, including existing research, DSC 106 Labs 1–4, the ongoing Project 2, and two clearly identified upcoming placeholders.
+- `lib/projects.json` holds every project card: the research projects, the DSC 106 labs, and the ongoing Project 2.
 - Every entry includes a numeric `year`. Existing project dates supply the 2024–2026 range; coursework uses 2026.
 - `global.js` exports `fetchJSON`, `renderProjects`, and `fetchGitHubData`.
 - `projects/projects.js` renders all cards and updates the title with the project count.
@@ -93,15 +93,15 @@ Recording sequence: show the three selected projects and GitHub statistics on Ho
 
 [Lab 4 instructions](https://dsc106.com/labs/lab04/)
 
-## Research redesign
+## Design
 
-The main branch contains the approved research redesign. The completed Lab 4 version with the original visual style is preserved on the lab4-original branch.
+The site is set like a type specimen. Roboto Serif carries the headings, the text, the navigation, and the controls. Martian Mono is kept for measurements: weight readouts, dates, counts, and chart axes. Both are variable fonts, hosted in `fonts/`. The palette is paper, ink, and one blue accent, each with a dark counterpart.
 
-The design uses a self-hosted Inconsolata typeface, green accents, project result summaries, category/year/search filters, expandable project studies, and a shared layout across all four pages. The JSON data flow, homepage first-three selection, theme persistence, and GitHub API are retained. Research figures come from the existing project descriptions; diagrams are illustrative.
+On the home page, font weight stands for certainty. When the page loads, the three words of the opening line settle from one shared weight into three: 900, 480, and 100. The Certainty slider beside them sets the same value by hand. A registered custom property, `--certainty`, drives the weights in CSS, and `index.js` only keeps the numeric readouts in step. With reduced motion turned on, the words start at their final weights.
 
-Use preview.cmd or python preview.py to run the modular website locally. The optional design-review.html comparison is a local review artifact and is excluded from version control and deployment.
+Project cards lead with a measured result when the project has one; a card without one starts with its title. The figures come from the project write-ups, and the illustrations are diagrams, not data. Each card is one link: the title carries an arrow, and the whole card opens the project.
 
-Browser checks cover root and /portfolio/ hosting, all pages at 320/390/768/1440 pixels, themes, rendering, filters, deep links, and API/data failure states. Automated API checks use controlled responses for successful requests, zero counts, and failure cases.
+Earlier versions of the design are in the Git history, and the Lab 4 version with its original style is on the `lab4-original` branch.
 
 ## Lab 5: categorical data with D3
 
@@ -110,7 +110,7 @@ Browser checks cover root and /portfolio/ hosting, all pages at 320/390/768/1440
 - Search updates the cards, the pie chart, and the legend as you type. It ignores case and covers titles, descriptions, categories, tools, years, and results.
 - Clicking a slice or a legend entry shows only that year's projects; clicking it again shows every year. The selected slice moves out slightly and the others turn gray. Legend entries are buttons with `aria-pressed`, so the year filter also works from the keyboard. They replace the Lab 4 year dropdown.
 - Hovering a slice highlights its legend entry, and hovering or focusing a legend entry highlights its slice.
-- Each year keeps its color when filters change. The colors are one green ramp built from the site's accent: the newest year is darkest in the light theme and lightest in the dark theme. Both ramps were checked for evenly separated steps and enough contrast against the page.
+- Each year keeps its color when filters change. The colors are one blue ramp built from the site's accent: the newest year is darkest in the light theme and lightest in the dark theme. Both ramps were checked for evenly separated steps and enough contrast against the page.
 - The Lab 5 project card now describes this chart instead of a placeholder.
 
 ### Step 5.4: combining search and the pie filter
@@ -143,7 +143,7 @@ Recording sequence: open Projects; hover the 2025 slice, click it, then click it
 - The summary shows total lines of code, total commits, file count, average file length, longest line, and the busiest time of day.
 - A D3 scatterplot places each commit by date and time of day. Dot area is proportional to the lines the commit still has in the site, using a square root scale, and small dots are drawn on top so they can be hovered.
 - Hovering a dot shows a tooltip with the commit link, date, time, author, and lines. It stays open if the mouse moves onto it, so the link can be clicked.
-- Dragging across the chart brushes commits. The panel beside the chart shows how many are selected and their lines per language, selected dots keep their color, and the rest turn gray.
+- Dragging across the chart brushes commits. Selected dots keep their color and the rest turn gray. The panel beside the chart shows how many are selected and their lines per language, with a bar for each language's share. With nothing selected, it covers every commit.
 - The chart also has a table view with the same commits for keyboard and screen reader users. Brushing itself needs a mouse or touch.
 - The chart is drawn at the width of its container, so axis text stays readable on phones, and redrawn when that width changes, which clears any selection.
 
@@ -165,3 +165,11 @@ Suggested short narration (about 40 seconds):
 Recording sequence: open Meta and show the summary; point to a large and a small dot; hover one dot; drag across several dots and show the selection panel; finish with the learning point.
 
 [Lab 6 instructions](https://dsc106.com/labs/lab06/)
+
+## Lab 7: Bikewatching
+
+Lab 7 is a separate site, [Bikewatching](https://gyjdb.github.io/bikewatching/) ([repository](https://github.com/gyjdb/bikewatching)): an interactive map of a month of Bluebikes rides around Boston and Cambridge, built with Mapbox GL JS and D3.
+
+In this repository, Step 7 adds its card to `lib/projects.json`, with a screenshot of the map at 8:30 AM. `images/bikewatching.svg` holds a light and a dark screenshot and shows the one that matches the page's theme. The card is marked `"wide"` in the JSON, so it takes two columns where the grid has them and shows the map as a strip. Every project has a `url` field, and `renderProjects` in `global.js` links each card's title to it.
+
+[Lab 7 instructions](https://dsc106.com/labs/lab07/)

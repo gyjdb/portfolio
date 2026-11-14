@@ -42,6 +42,21 @@
     "resultLabel": "player records / grouped validation"
   },
   {
+    "title": "Bikewatching: Bluebikes Traffic by Time of Day",
+    "year": 2026,
+    "description": "DSC 106 Lab 7: an interactive Mapbox and D3 map of a month of Bluebikes rides around Boston and Cambridge, filtered by time of day.",
+    "tools": "JavaScript / Mapbox GL JS / D3",
+    "url": "https://gyjdb.github.io/bikewatching/",
+    "image": "images/bikewatching.svg",
+    "alt": "Screenshot of the Bikewatching map at 8:30 AM: a circle on each bike station around Boston and Cambridge, blue where more trips leave and amber where more arrive.",
+    "displayTitle": "Bikewatching",
+    "category": "DSC 106 / Lab 7",
+    "group": "coursework",
+    "resultValue": "261,687",
+    "resultLabel": "rides / 453 stations",
+    "wide": true
+  },
+  {
     "title": "Blockchain Evidence System Reproduction",
     "year": 2025,
     "image": "images/blockchain-system.svg",

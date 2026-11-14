@@ -170,6 +170,6 @@ Recording sequence: open Meta and show the summary; point to a large and a small
 
 Lab 7 is a separate site, [Bikewatching](https://gyjdb.github.io/bikewatching/) ([repository](https://github.com/gyjdb/bikewatching)): an interactive map of a month of Bluebikes rides around Boston and Cambridge, built with Mapbox GL JS and D3.
 
-In this repository, Step 7 adds its card to `lib/projects.json`, with a screenshot of the map at 8:30 AM. `images/bikewatching.svg` holds a light and a dark screenshot and shows the one that matches the page's theme. The card is marked `"wide"` in the JSON, so it takes two columns where the grid has them and shows the map as a strip. Every project has a `url` field, and `renderProjects` in `global.js` links each card's title to it.
+In this repository, Step 7 adds its card to `lib/projects.json`, with a screenshot of the map at 8:30 AM. `images/bikewatching.svg` holds a light and a dark screenshot and shows the one that matches the page's theme. The card is marked `"wide"` in the JSON, so it takes a whole row where the grid has more than one column and shows the map as a strip. Every project has a `url` field, and `renderProjects` in `global.js` links each card's title to it.
 
 [Lab 7 instructions](https://dsc106.com/labs/lab07/)

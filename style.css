@@ -138,14 +138,14 @@ img { max-width: 100%; display: block; height: auto; }
 .projects article:hover .arrow.out { translate: 2px -2px; }
 .projects :is(h2,h3) a:focus-visible { outline: none; }
 .projects :is(h2,h3) a:focus-visible::after { outline: 2px solid var(--color-accent); outline-offset: 4px; }
-/* A wide card takes two columns where the grid has them. Its image becomes a strip as tall as the images beside it. */
+/* A wide card takes a whole row where the grid has more than one column, and shows its image as a strip. */
 @container (min-width: 40rem) {
-  .projects > .project-wide { grid-column: span 2; }
+  .projects > .project-wide { grid-column: 1 / -1; }
   .projects > .project-wide img { aspect-ratio: 4 / 1; }
   .projects > .project-wide .project-description { max-width: 62ch; }
 }
 .projects img { width: 100%; aspect-ratio: 16 / 8.4; object-fit: cover; background: var(--soft); }
-.project-description { font-size: .94rem; line-height: 1.6; }
+.project-description { font-size: .94rem; line-height: 1.6; text-wrap: pretty; }
 .project-meta { display: flex; flex-wrap: wrap; gap: .1rem .6rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 /* Year and area share the first line; the tools always take the second, so every card reads the same. */
 .project-meta .tools { flex-basis: 100%; }

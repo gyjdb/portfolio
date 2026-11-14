@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- An E whose three arms go from heavy to thin, like the three weights on the home page. -->
+  <style>
+    .ground { fill: #0f0f0e; }
+    .mark { fill: #f7f7f4; }
+    @media (prefers-color-scheme: dark) {
+      .ground { fill: #f3f3ee; }
+      .mark { fill: #121311; }
+    }
+  </style>
+  <rect class="ground" width="32" height="32"/>
+  <path class="mark" d="M8 6h16v6H12v2.5h9V18h-9v6.5h12V26H8z"/>
+</svg>

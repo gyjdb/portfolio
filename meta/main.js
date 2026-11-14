@@ -88,14 +88,22 @@ function renderSelectionCount(selectedCommits) {
   document.querySelector('#selection-count').textContent = `${count || 'No'} ${count === 1 ? 'commit' : 'commits'} selected`;
 }
 
-// Step 5.6: count the selected commits' lines per language, largest first.
-function renderLanguageBreakdown(selectedCommits) {
-  const lines = selectedCommits.flatMap(d => d.lines);
+// Step 5.6: count lines per language, largest first. With nothing selected it covers every commit,
+// so the panel shows the whole codebase instead of sitting empty.
+function renderLanguageBreakdown(selectedCommits, commits) {
+  const hasSelection = selectedCommits.length > 0;
+  const lines = (hasSelection ? selectedCommits : commits).flatMap(d => d.lines);
   const breakdown = d3.rollups(lines, v => v.length, d => d.type);
+  document.querySelector('#language-scope').textContent = hasSelection
+    ? 'Lines by language, selected commits'
+    : `Lines by language, all ${commits.length} commits`;
   const container = d3.select('#language-breakdown').html('');
   for (const [language, count] of d3.sort(breakdown, d => -d[1])) {
-    container.append('dt').text(language);
-    container.append('dd').text(`${count} ${count === 1 ? 'line' : 'lines'} (${d3.format('.1~%')(count / lines.length)})`);
+    const share = count / lines.length;
+    // --share sets the length of the row's bar in CSS.
+    const row = container.append('div').style('--share', share);
+    row.append('dt').text(language);
+    row.append('dd').text(`${count} ${count === 1 ? 'line' : 'lines'} (${d3.format('.1~%')(share)})`);
   }
 }
 
@@ -103,7 +111,7 @@ function renderScatterPlot(commits, width) {
   // A redraw replaces the old chart, and its brush selection goes with it.
   updateTooltipVisibility(false);
   renderSelectionCount([]);
-  renderLanguageBreakdown([]);
+  renderLanguageBreakdown([], commits);
 
   const height = Math.max(340, width * 0.6);
   const margin = { top: 12, right: 16, bottom: 30, left: 44 };
@@ -125,8 +133,11 @@ function renderScatterPlot(commits, width) {
     .style('overflow', 'visible');
 
   // Step 2: dates run left to right, and hours run from midnight at the bottom to midnight at the top.
+  // A little time is added before the first commit and after the last, so their dots don't hang off the plot.
+  const [firstCommit, lastCommit] = d3.extent(commits, d => d.datetime);
+  const padding = (lastCommit - firstCommit) * 0.04;
   const xScale = d3.scaleTime()
-    .domain(d3.extent(commits, d => d.datetime))
+    .domain([new Date(firstCommit - padding), new Date(+lastCommit + padding)])
     .range([usableArea.left, usableArea.right])
     .nice();
   const yScale = d3.scaleLinear().domain([0, 24]).range([usableArea.bottom, usableArea.top]);
@@ -164,7 +175,7 @@ function renderScatterPlot(commits, width) {
     svg.selectAll('.dots circle').classed('selected', d => isCommitSelected(selection, d));
     const selectedCommits = commits.filter(d => isCommitSelected(selection, d));
     renderSelectionCount(selectedCommits);
-    renderLanguageBreakdown(selectedCommits);
+    renderLanguageBreakdown(selectedCommits, commits);
   }
 
   // Step 5.2: the brush's overlay catches mouse events, so it goes under the dots to keep their tooltips working.

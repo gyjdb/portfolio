@@ -55,6 +55,42 @@ async function loadGitHubStats() {
   }
 }
 
+// The certainty slider: at 0 the three words share one weight, at 1 each has its own.
+// CSS turns --certainty into font weights and plays the opening once; this keeps the numbers in step.
+function setUpCertainty() {
+  const specimen = document.querySelector('.specimen');
+  const slider = document.querySelector('#certainty');
+  if (!specimen || !slider) return;
+  const output = document.querySelector('#certainty-value');
+  const words = [...specimen.querySelectorAll('.word')].map(word => ({
+    readout: word.querySelector('small b'),
+    to: Number(word.style.getPropertyValue('--to')),
+  }));
+
+  function show(certainty) {
+    slider.value = certainty;
+    output.textContent = certainty.toFixed(2);
+    for (const { readout, to } of words) readout.textContent = Math.round(480 + (to - 480) * certainty);
+  }
+
+  // While the opening animation runs, read the value it has reached on each frame.
+  let frame = 0;
+  function follow() {
+    show(Number(getComputedStyle(specimen).getPropertyValue('--certainty')));
+    if (specimen.getAnimations().length) frame = requestAnimationFrame(follow);
+  }
+  follow();
+
+  slider.addEventListener('input', () => {
+    // Moving the slider takes over from the animation.
+    cancelAnimationFrame(frame);
+    for (const animation of specimen.getAnimations()) animation.cancel();
+    specimen.style.setProperty('--certainty', slider.value);
+    show(Number(slider.value));
+  });
+}
+
 // Independent requests: an API failure must not prevent the project gallery loading.
+setUpCertainty();
 loadProjects();
 loadGitHubStats();

@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Ethan Cai’s projects in natural language processing, time-series prediction, predictive modeling, blockchain systems, and computer vision.">
   <title>Projects | Ethan Cai</title>
-  <link rel="preload" href="../fonts/inconsolata-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/roboto-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../style.css">
   <script type="module" src="../global.js"></script>
   <script type="module" src="projects.js"></script>
@@ -13,11 +14,10 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
-    <a class="wordmark" href="../" aria-label="Ethan Cai, home"><span class="wordmark-symbol" aria-hidden="true">ec/</span><span>Ethan Cai</span></a>
+    <a class="wordmark" href="../" aria-label="Ethan Cai, home">Ethan Cai</a>
   </header>
   <main id="main">
 <header class="page-intro">
-  <p class="eyebrow">Research / systems / coursework</p>
   <h1 class="projects-title">Projects</h1>
   <p>A collection of research, experiments, and things built along the way. Explore the work by area, year, or a question that interests you.</p>
 </header>
@@ -35,7 +35,7 @@
     </div>
   </div>
   <figure class="year-chart" id="projects-by-year" hidden>
-    <figcaption class="year-chart-caption"><span class="eyebrow">Projects by year</span><span class="year-chart-hint">Select a slice or a year to filter. Select it again for every year.</span></figcaption>
+    <figcaption class="year-chart-caption"><strong>Projects by year</strong><span class="year-chart-hint">Select a slice or a year to filter. Select it again for every year.</span></figcaption>
     <svg id="projects-pie-plot" viewBox="-50 -50 100 100" aria-hidden="true"></svg>
     <ul class="legend" aria-label="Filter projects by year"></ul>
   </figure>
@@ -48,12 +48,10 @@
 <h2 class="project-details-heading" id="project-details-heading">Selected project details</h2>
 
 <div class="project-list">
-<details class="project-study" id="ner"><summary><span class="study-number">01</span>Named Entity Recognition in Chinese Fiction</summary>
+<details class="project-study" id="ner"><summary><h3 id="ner-heading">Named Entity Recognition in Chinese Fiction</h3></summary>
 <article class="project-detail" aria-labelledby="ner-heading">
   <header>
-    <p class="eyebrow">01 / NLP research</p>
-    <h2 id="ner-heading">Named Entity Recognition in Chinese Fiction</h2>
-    <p class="role">Independent research</p>
+    <p class="role">NLP research · Independent research</p>
     <p class="meta"><time datetime="2026-09">Sep 2026</time> &ndash; <time datetime="2026-10">Oct 2026</time></p>
     <p class="tools">Python, PyTorch, Chinese RoBERTa</p>
   </header>
@@ -66,14 +64,13 @@
     <dt>Result</dt>
     <dd>Reached <strong>90.8% strict entity-level F1</strong> (three-seed mean) on a held-out, 40-chapter silver-standard test set, <strong>2.0 percentage points</strong> above the teacher-only baseline.</dd>
   </dl>
-  <p class="project-link"><a class="text-link" href="https://github.com/gyjdb/chinese-novel-ner">Code &amp; experiments on GitHub <span aria-hidden="true">→</span></a></p>
+  <p class="project-link"><a class="text-link" href="https://github.com/gyjdb/chinese-novel-ner">Code &amp; experiments on GitHub <span class="arrow" aria-hidden="true"></span></a></p>
 </article>
 </details>
-<details class="project-study" id="crypto"><summary><span class="study-number">02</span>Intraday Crypto Prediction and Time-Series Evaluation</summary>
+<details class="project-study" id="crypto"><summary><h3 id="crypto-heading">Intraday Crypto Prediction and Time-Series Evaluation</h3></summary>
 <article class="project-detail" aria-labelledby="crypto-heading">
   <header>
-    <p class="eyebrow">02 / Time-series research</p>
-    <h2 id="crypto-heading">Intraday Crypto Prediction and Time-Series Evaluation</h2>
+    <p class="role">Time-series research</p>
     <p class="meta"><time datetime="2025-08">Aug 2025</time> &ndash; <time datetime="2025-11">Nov 2025</time></p>
     <p class="tools">Python, LightGBM, Logistic Regression</p>
   </header>
@@ -88,12 +85,10 @@
   </dl>
 </article>
 </details>
-<details class="project-study" id="pubg"><summary><span class="study-number">03</span>PUBG Match Placement Prediction</summary>
+<details class="project-study" id="pubg"><summary><h3 id="pubg-heading">PUBG Match Placement Prediction</h3></summary>
 <article class="project-detail" aria-labelledby="pubg-heading">
   <header>
-    <p class="eyebrow">03 / Predictive modeling</p>
-    <h2 id="pubg-heading">PUBG Match Placement Prediction</h2>
-    <p class="role">Two-person course project</p>
+    <p class="role">Predictive modeling · Two-person course project</p>
     <p class="meta"><time datetime="2025-06">Jun 2025</time></p>
     <p class="tools">Python, LightGBM, CatBoost</p>
   </header>
@@ -108,12 +103,10 @@
   </dl>
 </article>
 </details>
-<details class="project-study" id="blockchain"><summary><span class="study-number">04</span>Blockchain Evidence System Reproduction</summary>
+<details class="project-study" id="blockchain"><summary><h3 id="blockchain-heading">Blockchain Evidence System Reproduction</h3></summary>
 <article class="project-detail" aria-labelledby="blockchain-heading">
   <header>
-    <p class="eyebrow">04 / Systems integration</p>
-    <h2 id="blockchain-heading">Blockchain Evidence System Reproduction</h2>
-    <p class="role">Reproduction lead · Team project</p>
+    <p class="role">Systems integration · Reproduction lead · Team project</p>
     <p class="meta"><time datetime="2025-11">Nov 2025</time> &ndash; <time datetime="2025-12">Dec 2025</time></p>
     <p class="tools">FISCO BCOS, WeBASE, Django, WeChat Mini Program</p>
   </header>
@@ -128,12 +121,10 @@
   </dl>
 </article>
 </details>
-<details class="project-study" id="deepfake"><summary><span class="study-number">05</span>Deepfake Detection Model Optimization</summary>
+<details class="project-study" id="deepfake"><summary><h3 id="deepfake-heading">Deepfake Detection Model Optimization</h3></summary>
 <article class="project-detail" aria-labelledby="deepfake-heading">
   <header>
-    <p class="eyebrow">05 / Computer vision</p>
-    <h2 id="deepfake-heading">Deepfake Detection Model Optimization</h2>
-    <p class="role">Independent research</p>
+    <p class="role">Computer vision · Independent research</p>
     <p class="meta"><time datetime="2024-10">Oct 2024</time> &ndash; <time datetime="2025-01">Jan 2025</time></p>
     <p class="tools">Python, PyTorch, MobileNetV3, GCBlock</p>
   </header>
@@ -149,7 +140,7 @@
 </article>
 </details>
 </div>
-<p class="closing-link"><a class="text-link" href="../resume/index.html">See the full resume <span aria-hidden="true">→</span></a></p>
+<p class="closing-link"><a class="text-link" href="../resume/index.html">See the full resume <span class="arrow" aria-hidden="true"></span></a></p>
   </main>
   <footer class="site-footer">
     <p>Ethan Cai <span aria-hidden="true">/</span> La Jolla, California</p>

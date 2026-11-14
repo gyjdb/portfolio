@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="450" viewBox="0 0 720 450">
+  <style>@media (prefers-color-scheme: dark) { [fill="#ecece8"] { fill: #1b1c19; } [fill="#0f0f0e"] { fill: #f3f3ee; } [stroke="#0f0f0e"] { stroke: #f3f3ee; } [fill="#c4c4bc"] { fill: #45463f; } [stroke="#c4c4bc"] { stroke: #45463f; } [fill="#62625b"] { fill: #9b9b92; } }</style>
+  <rect width="720" height="450" fill="#ecece8"/>
+  <path d="M360 95H555a5 5 0 0 1 5 5V350a5 5 0 0 1-5 5H360Z" fill="#0f0f0e"/>
+  <g fill="#c4c4bc"><rect x="184" y="121" width="40" height="10"/><rect x="236" y="121" width="40" height="10"/><rect x="288" y="121" width="40" height="10"/><rect x="184" y="223" width="152" height="10"/><rect x="184" y="245" width="130" height="10"/><rect x="184" y="267" width="142" height="10"/></g>
+  <g fill="#0f0f0e"><rect x="184" y="137" width="40" height="3"/><rect x="184" y="183" width="110" height="18"/><rect x="184" y="300" width="70" height="26" rx="3"/></g>
+  <g fill="#ecece8"><rect x="384" y="121" width="40" height="10"/><rect x="436" y="121" width="40" height="10"/><rect x="488" y="121" width="40" height="10"/><rect x="384" y="137" width="40" height="3"/><rect x="384" y="183" width="110" height="18"/><rect x="384" y="300" width="70" height="26" rx="3"/><g opacity=".7"><rect x="384" y="223" width="152" height="10"/><rect x="384" y="245" width="130" height="10"/><rect x="384" y="267" width="142" height="10"/></g></g>
+  <rect x="160" y="95" width="400" height="260" rx="5" fill="none" stroke="#0f0f0e" stroke-width="3"/>
+</svg>

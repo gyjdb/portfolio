@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Statistics about the code behind Ethan Cai’s portfolio, with a chart of when each commit was made.">
   <title>Meta | Ethan Cai</title>
-  <link rel="preload" href="../fonts/inconsolata-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/roboto-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../style.css">
   <script type="module" src="../global.js"></script>
   <script type="module" src="main.js"></script>
@@ -13,11 +14,10 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
-    <a class="wordmark" href="../" aria-label="Ethan Cai, home"><span class="wordmark-symbol" aria-hidden="true">ec/</span><span>Ethan Cai</span></a>
+    <a class="wordmark" href="../" aria-label="Ethan Cai, home">Ethan Cai</a>
   </header>
   <main id="main">
 <header class="page-intro">
-  <p class="eyebrow">Code / commits / lines</p>
   <h1>Meta</h1>
   <p>What this site’s own code looks like: how big it is, and when each part of it was written. The numbers come from running git blame on every line.</p>
 </header>
@@ -31,9 +31,9 @@
   <div class="commit-view">
     <div id="chart"></div>
     <aside class="selection-panel" aria-label="Selected commits">
-      <p class="eyebrow">Selection</p>
       <p id="selection-count">No commits selected</p>
       <p class="selection-hint">Drag across the chart to select commits. Click the chart to clear.</p>
+      <p class="language-scope" id="language-scope"></p>
       <dl id="language-breakdown" class="language-list"></dl>
     </aside>
   </div>

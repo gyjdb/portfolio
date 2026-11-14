@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="450" viewBox="0 0 720 450">
+  <style>@media (prefers-color-scheme: dark) { [fill="#ecece8"] { fill: #1b1c19; } [fill="#0f0f0e"] { fill: #f3f3ee; } [stroke="#0f0f0e"] { stroke: #f3f3ee; } [fill="#c4c4bc"] { fill: #45463f; } [stroke="#c4c4bc"] { stroke: #45463f; } [fill="#62625b"] { fill: #9b9b92; } }</style>
+  <rect width="720" height="450" fill="#ecece8"/>
+  <g fill="#c4c4bc"><rect x="107" y="127" width="296" height="16"/><rect x="107" y="163" width="88" height="160"/><rect x="211" y="163" width="88" height="160"/><rect x="315" y="163" width="88" height="160"/><rect x="531" y="107" width="88" height="14"/><rect x="531" y="135" width="88" height="62"/><rect x="531" y="209" width="88" height="62"/><rect x="531" y="283" width="88" height="62"/></g>
+  <g fill="none" stroke="#0f0f0e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="85" y="105" width="340" height="240" rx="5"/><rect x="515" y="85" width="120" height="280" rx="12"/><path d="M447 225H491M479 213L491 225L479 237"/></g>
+</svg>

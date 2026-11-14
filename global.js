@@ -42,7 +42,7 @@ for (const p of pages) {
   if (a.host !== location.host) {
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
-    a.insertAdjacentHTML('beforeend', ' <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span>');
+    a.insertAdjacentHTML('beforeend', ' <span class="arrow out" aria-hidden="true"></span><span class="visually-hidden"> (opens in a new tab)</span>');
   }
 
   nav.append(a);
@@ -151,26 +151,42 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     const article = document.createElement('article');
     article.className = 'project-card';
     article.classList.toggle('project-placeholder', Boolean(project.placeholder));
+    article.classList.toggle('has-result', Boolean(project.resultValue));
+    article.classList.toggle('project-wide', Boolean(project.wide));
     article.innerHTML = `
-      <div class="project-kicker"><span class="project-category"></span><span class="project-year"></span></div>
+      <p class="project-result"></p>
       <${headingLevel}></${headingLevel}>
       <img width="720" height="450" loading="lazy">
       <p class="project-description"></p>
-      <p class="project-result"></p>
-      <div class="project-footer"><span class="tools"></span></div>
+      <p class="project-meta"><span class="project-year"></span><span class="project-category"></span><span class="tools"></span></p>
     `;
-    article.querySelector('.project-category').textContent = project.category || 'Project';
-    article.querySelector('.project-year').textContent = project.year || 'Undated';
+    // A headline figure leads the card when the project has one; otherwise the title leads.
+    const result = article.querySelector('.project-result');
+    if (project.resultValue) {
+      const value = document.createElement('strong');
+      value.textContent = project.resultValue;
+      result.append(value, document.createTextNode(project.resultLabel || ''));
+    }
     const title = article.querySelector(headingLevel);
     title.textContent = project.displayTitle || project.title || 'Untitled project';
-    let projectURL;
     if (project.url) {
       const candidate = new URL(project.url, import.meta.url);
       if (['http:', 'https:'].includes(candidate.protocol)) {
-        projectURL = candidate.href;
         const link = document.createElement('a');
-        link.href = projectURL;
+        link.href = candidate.href;
         link.textContent = title.textContent;
+        // The arrow marks the title as a link. One that leaves this site points outward and opens in a new tab.
+        const leavesSite = !candidate.href.startsWith(new URL('./', import.meta.url).href);
+        const arrow = document.createElement('span');
+        arrow.className = leavesSite ? 'arrow out' : 'arrow';
+        arrow.setAttribute('aria-hidden', 'true');
+        // A no-break space keeps the arrow on the same line as the last word.
+        link.append('\u00a0', arrow);
+        if (leavesSite) {
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.insertAdjacentHTML('beforeend', '<span class="visually-hidden"> (opens in a new tab)</span>');
+        }
         title.replaceChildren(link);
       }
     }
@@ -182,27 +198,9 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       image.alt = 'Project illustration unavailable.';
     }, { once: true });
     article.querySelector('.project-description').textContent = project.description || 'Description coming soon.';
-    const result = article.querySelector('.project-result');
-    if (project.resultValue) {
-      const value = document.createElement('strong');
-      value.textContent = project.resultValue;
-      result.append(value, document.createTextNode(` ${project.resultLabel || ''}`));
-    } else {
-      result.textContent = project.resultLabel || (project.placeholder ? 'Planned coursework' : 'Project notes');
-    }
+    article.querySelector('.project-year').textContent = project.year || 'Undated';
+    article.querySelector('.project-category').textContent = project.category || 'Project';
     article.querySelector('.tools').textContent = project.tools || '';
-    if (projectURL) {
-      const link = document.createElement('a');
-      link.href = projectURL;
-      link.textContent = '↗';
-      link.setAttribute('aria-label', `View ${project.title}`);
-      article.querySelector('.project-footer').append(link);
-    } else {
-      const label = document.createElement('span');
-      label.className = 'tools';
-      label.textContent = 'Planned';
-      article.querySelector('.project-footer').append(label);
-    }
     containerElement.append(article);
   }
 }

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="450" viewBox="0 0 720 450">
+  <style>@media (prefers-color-scheme: dark) { [fill="#ecece8"] { fill: #1b1c19; } [stroke="#ecece8"] { stroke: #1b1c19; } [fill="#0f0f0e"] { fill: #f3f3ee; } [stroke="#0f0f0e"] { stroke: #f3f3ee; } [fill="#c4c4bc"] { fill: #45463f; } [stroke="#c4c4bc"] { stroke: #45463f; } [fill="#62625b"] { fill: #9b9b92; } }</style>
+  <rect width="720" height="450" fill="#ecece8"/>
+  <g stroke="#ecece8" stroke-width="4" stroke-linejoin="round"><path d="M259 225L259 107A118 118 0 1 1 156.81 284Z" fill="#0f0f0e"/><path d="M259 225L156.81 284A118 118 0 0 1 200 122.81Z" fill="#0f0f0e" fill-opacity=".55" transform="translate(-9.7 -2.6)"/><path d="M259 225L200 122.81A118 118 0 0 1 259 107Z" fill="#c4c4bc"/></g>
+  <rect x="466" y="155" width="20" height="20" rx="3" fill="#0f0f0e"/><rect x="466" y="215" width="20" height="20" rx="3" fill="#0f0f0e" fill-opacity=".55"/><rect x="466" y="275" width="20" height="20" rx="3" fill="#c4c4bc"/>
+  <rect x="450" y="203" width="140" height="44" rx="4" fill="none" stroke="#0f0f0e" stroke-width="3"/>
+  <g fill="#0f0f0e" font-family="system-ui, sans-serif" font-size="22"><text x="500" y="173">2026</text><text x="500" y="233">2025</text><text x="500" y="293">2024</text></g>
+</svg>

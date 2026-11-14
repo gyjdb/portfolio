@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="450" viewBox="0 0 720 450">
+  <style>@media (prefers-color-scheme: dark) { [fill="#ecece8"] { fill: #1b1c19; } [fill="#0f0f0e"] { fill: #f3f3ee; } [stroke="#0f0f0e"] { stroke: #f3f3ee; } [fill="#c4c4bc"] { fill: #45463f; } [stroke="#c4c4bc"] { stroke: #45463f; } [fill="#62625b"] { fill: #9b9b92; } }</style>
+  <rect width="720" height="450" fill="#ecece8"/>
+  <g fill="none" stroke="#c4c4bc" stroke-width="3" stroke-linejoin="round"><path d="M135 120V330H325"/><path d="M395 120V330H585"/></g>
+  <g fill="#0f0f0e" font-family="system-ui, sans-serif" font-size="18" text-anchor="middle"><path d="M165 330V158a4 4 0 0 1 4-4h48a4 4 0 0 1 4 4V330Z"/><path d="M245 330V136a4 4 0 0 1 4-4h48a4 4 0 0 1 4 4V330Z"/><path d="M425 330V268a4 4 0 0 1 4-4h48a4 4 0 0 1 4 4V330Z"/><path d="M505 330V136a4 4 0 0 1 4-4h48a4 4 0 0 1 4 4V330Z"/><text x="360" y="92" font-size="22">Same two values</text><text x="230" y="366">Axis from 0</text><text x="490" y="366">Axis from 75</text></g>
+</svg>

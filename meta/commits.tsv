@@ -1,0 +1,21 @@
+commit	subject
+d05dd8c9d5fe610376595113de043704718770c2	Lab 7: regenerate loc.csv
+738f22e519efd7b93f38a0ecfdad8508b80bde55	Lab 7: give the Bikewatching card a full row
+69fee24917fac8af458a4cd6ce4d810365d1f06a	Lab 7: regenerate loc.csv
+aed13433e1785c4b5c18705c47ae74973641472a	Lab 7: add the Bikewatching project card
+f61959f6f94066b78e4e690ece6a54b602849d6d	Redesign the site as a type specimen
+6fac6c3a4a557a9d720945b92825c552631b18f5	Lab 6: regenerate loc.csv
+03003b75645c0c8cd79ad74c72ff2ad0c04b7cd4	Lab 6: redraw the commit chart when its container width changes
+404566622fa31b5762565d6e83c7d7376a5f94dc	Lab 6: regenerate loc.csv
+ee42d3f473f50fa562755cf7f2ab355725342080	Lab 6: add Meta page with code stats, commit scatterplot, tooltips, and brushing
+0b5a1f0d5f47bf4e923fe94c3fc81aa8243f3123	Lab 5: add D3 pie chart of projects by year with search and year filtering
+7a8a23735135d8f514b8cfaec95e8d04ccc039d5	Integrate homepage photo into the about section
+f47d3512c862aa7c888b868a883bfa72947d020e	Restore homepage photograph required by Lab 1
+82139a394f6b181890181680376963fcb0854b46	Redesign research portfolio and add project archive filters
+784df9f402e774bd84e485130f25afa8a041e8ce	Complete Lab 4 data-driven portfolio
+06051d532fac09653a554b7fac514ea20af822e6	Remove Project 2 report (moved to gyjdb/dsc106-project2)
+5d8b63fe2b9cad75f4ec5622bbce499eb623e72a	Project 2: add report page with U1 section and placeholders for S2 and reflection
+9e9cccb32f1dae955545561ea6dc8412aa6eaf1b	Lab 3: add JavaScript navigation, dark mode switch, and contact form
+22b0449e468c210b7b5f172414ed10812c441f68	Lab 2: style the site with CSS and update content from new CV
+ac96364e6f30dc51e6e7bc3015dccaf006c7bc35	Add GitHub Pages link to README
+334a9e9f01206eabb43008e9d4037786d0ea3413	Initial portfolio

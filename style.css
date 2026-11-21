@@ -21,6 +21,11 @@
   --year-1: light-dark(#1e40af, #a3b8ff);
   --year-2: light-dark(#476dd1, #668dee);
   --year-3: light-dark(#84a3ea, #3f62be);
+  /* Lab 8 file chart: one color per technology. Checked as a categorical palette on both page colors
+     (every pair stays apart for color-blind readers, and each has 3:1 contrast with the page). */
+  --lang-js: light-dark(#14938d, #33a6a0);
+  --lang-css: light-dark(#84307f, #a34f9e);
+  --lang-html: light-dark(#bd5833, #cb6440);
   --serif: "Roboto Serif", Georgia, "Times New Roman", serif;
   --mono: "Martian Mono", ui-monospace, Consolas, monospace;
   --arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23 16'%3E%3Cpath d='M1 8h20M15 2l6 6-6 6' fill='none' stroke='%23000' stroke-width='1.6'/%3E%3C/svg%3E");
@@ -49,7 +54,7 @@ input,textarea { caret-color: var(--color-accent); }
 img { max-width: 100%; display: block; height: auto; }
 [hidden] { display: none !important; }
 /* The small monospace voice, kept for measurements: axis values, dates, counts and their units. */
-.word small,.axis-control .ends,.project-result,#profile-stats dt,.stats dt,.results-count,.legend-value,.meta,.axis text,.language-scope,.language-list dt,dl.info dt,.commit-table th { font: 400 11.5px/1.55 var(--mono); font-stretch: 87.5%; letter-spacing: .03em; text-transform: uppercase; }
+.word small,.axis-control .ends,.project-result,#profile-stats dt,.stats dt,.results-count,.legend-value,.meta,.axis text,.language-scope,.language-list dt,.language-legend li,#files small,dl.info dt,.commit-table th { font: 400 11.5px/1.55 var(--mono); font-stretch: 87.5%; letter-spacing: .03em; text-transform: uppercase; }
 /* The small serif voice, for navigation, labels, and captions. */
 .site-header nav a,.color-scheme,.facts dt,.project-meta,.about-photo figcaption,.site-footer,.filter-tabs button,.tools,.role,.project-facts dt,.skills-list dt,form label { font: 400 .84rem/1.5 var(--serif); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
@@ -91,11 +96,13 @@ img { max-width: 100%; display: block; height: auto; }
 .axis-control { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: baseline; gap: .55rem 1rem; border-bottom: 1px solid var(--line); padding-bottom: 1.35rem; }
 .axis-control label { color: var(--ink); font: 500 1rem/1.2 var(--serif); }
 .axis-control output { color: var(--ink); font: 500 .9rem/1 var(--mono); font-variant-numeric: tabular-nums; }
-.axis-control input { grid-column: 1 / -1; width: 100%; height: 20px; margin: 0; border: 0; padding: 0; background: none; -webkit-appearance: none; appearance: none; cursor: ew-resize; }
-.axis-control input::-webkit-slider-runnable-track { height: 2px; background: linear-gradient(var(--color-accent) 0 0) 0 / calc(var(--certainty) * 100%) 100% no-repeat, var(--line); }
-.axis-control input::-moz-range-track { height: 2px; background: linear-gradient(var(--color-accent) 0 0) 0 / calc(var(--certainty) * 100%) 100% no-repeat, var(--line); }
-.axis-control input::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; margin-top: -7px; border-radius: 50%; background: var(--color-accent); }
-.axis-control input::-moz-range-thumb { width: 16px; height: 16px; border: 0; border-radius: 50%; background: var(--color-accent); }
+.axis-control input { --fill: var(--certainty); }
+.time-filter input { --fill: var(--progress, 0); }
+.axis-control input,.time-filter input { grid-column: 1 / -1; width: 100%; height: 20px; margin: 0; border: 0; padding: 0; background: none; -webkit-appearance: none; appearance: none; cursor: ew-resize; }
+.axis-control input::-webkit-slider-runnable-track,.time-filter input::-webkit-slider-runnable-track { height: 2px; background: linear-gradient(var(--color-accent) 0 0) 0 / calc(var(--fill) * 100%) 100% no-repeat, var(--line); }
+.axis-control input::-moz-range-track,.time-filter input::-moz-range-track { height: 2px; background: linear-gradient(var(--color-accent) 0 0) 0 / calc(var(--fill) * 100%) 100% no-repeat, var(--line); }
+.axis-control input::-webkit-slider-thumb,.time-filter input::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; margin-top: -7px; border-radius: 50%; background: var(--color-accent); }
+.axis-control input::-moz-range-thumb,.time-filter input::-moz-range-thumb { width: 16px; height: 16px; border: 0; border-radius: 50%; background: var(--color-accent); }
 .axis-control .ends { grid-column: 1 / -1; display: flex; justify-content: space-between; color: var(--muted); }
 /* The facts, as a small table: labels in one column, values in the other. */
 .facts { display: grid; grid-template-columns: auto minmax(0,1fr); gap: .4rem 1.1rem; border-top: 1px solid var(--line); padding-top: 1.05rem; font-size: .94rem; line-height: 1.4; }
@@ -260,13 +267,53 @@ form > .form-note { margin-top: -8px; }
 .stats dd { font-size: 2.2rem; }
 .commit-section { margin-top: 2.75rem; }
 .chart-note { margin-top: .65rem; max-width: 62ch; font-size: .96rem; }
-.commit-view { display: grid; grid-template-columns: minmax(0,1fr) 240px; gap: 36px; align-items: start; margin-top: 1.4rem; }
+/* Lab 8 Step 3.1: the commit story on one side, and the charts held in view on the other. */
+#scrolly-1 { position: relative; display: flex; align-items: flex-start; gap: 3rem; margin-top: 1.6rem; }
+#scatter-story { position: relative; flex: 0 0 21rem; padding-bottom: 22vh; }
+#scatter-plot { position: sticky; top: 1rem; flex: 1; min-width: 0; display: grid; grid-template-columns: minmax(0,1fr) 15rem; align-items: start; gap: 1.4rem 2.25rem; }
+.pin { min-width: 0; }
+/* A step of the story. The current one is set heavier and darker; the others wait in a light weight. */
+.step { padding-bottom: 36vh; }
+.step h3 { margin-top: .3rem; color: var(--muted); font-size: 1.2rem; font-weight: 300; line-height: 1.25; transition: font-weight 250ms, color 250ms; }
+.step h3 a { color: inherit; text-decoration: none; }
+.step h3 a:hover { color: var(--color-accent); text-decoration: underline; text-decoration-thickness: 1px; }
+.step h3 .arrow { margin-left: .4em; font-size: .62em; }
+.step > p:last-child { margin-top: .45rem; color: var(--muted); font-size: .94rem; line-height: 1.55; transition: color 250ms; }
+.step.is-active h3 { color: var(--ink); font-weight: 640; }
+.step.is-active > p:last-child { color: var(--text); }
+/* Lab 8 Step 1.1: the time filter. Its label and the time share a line, with the slider under them. */
+.time-filter label { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: baseline; gap: .5rem 1rem; color: var(--ink); font: 500 1rem/1.2 var(--serif); }
+.time-filter label > span { grid-area: 1 / 1; white-space: nowrap; }
+.time-filter time { grid-area: 1 / 2; color: var(--ink); font: 500 .8rem/1.2 var(--mono); font-stretch: 87.5%; font-variant-numeric: tabular-nums; text-align: right; }
+.time-filter input { grid-row: 2; }
+#commit-summary { margin-top: .3rem; }
+#chart { margin-top: .9rem; }
 #chart svg { display: block; width: 100%; height: auto; }
+/* Lab 8 Step 2: the unit chart. A row for each file and a dot for each of its lines. */
+.files-block { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 1rem; }
+.files-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .3rem 1.5rem; }
+.files-heading h3 { font-size: 1.1rem; }
+.language-legend { display: flex; gap: 1.1rem; margin: 0; padding: 0; list-style: none; }
+.language-legend li { display: flex; align-items: center; gap: .45em; color: var(--muted); }
+.language-legend li::before { content: ""; width: 8px; aspect-ratio: 1; border-radius: 50%; background: var(--color); forced-color-adjust: none; }
+/* Step 2.1: the rows are subgrids, so every file name and every row of dots starts on the same line. */
+#files { display: grid; grid-template-columns: minmax(7.5rem, max-content) minmax(0,1fr); gap: .42rem 1.25rem; margin-top: .8rem; }
+#files > div { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: start; }
+/* The file's name and its line count share one line, so a row is no taller than its dots need. */
+#files dt { grid-column: 1; display: flex; align-items: baseline; justify-content: space-between; gap: .9rem; }
+#files code { color: var(--ink); font: 400 .72rem/1.35 var(--mono); font-stretch: 87.5%; overflow-wrap: anywhere; }
+#files small { flex: none; color: var(--muted); }
+#files dd { grid-column: 2; display: flex; flex-wrap: wrap; align-items: start; align-content: start; gap: 1.5px; margin: 0; padding-top: .34rem; }
+/* Step 2.2: a line of code. New lines grow in, the same way new commits do on the chart. */
+.loc { width: 5px; aspect-ratio: 1; border-radius: 50%; background: var(--color); forced-color-adjust: none; transition: scale 260ms cubic-bezier(.16,1,.3,1); }
+@starting-style { .loc { scale: 0; } }
 .axis text { fill: var(--muted); font-size: 10.5px; }
 .axis .domain,.axis line,.gridlines line { stroke: var(--line); }
 .gridlines .domain { display: none; }
 /* The page-colored ring keeps overlapping dots apart. */
-.dots circle { fill: var(--color-accent); fill-opacity: .72; stroke: var(--paper); stroke-width: 2px; cursor: crosshair; transform-origin: center; transform-box: fill-box; transition: transform 200ms, fill 200ms, fill-opacity 200ms; }
+.dots circle { fill: var(--color-accent); fill-opacity: .72; stroke: var(--paper); stroke-width: 2px; cursor: crosshair; transform-origin: center; transform-box: fill-box; transition: transform 200ms, fill 200ms, fill-opacity 200ms, r 320ms cubic-bezier(.16,1,.3,1); }
+/* Lab 8 Step 1.4: a new dot has no earlier state to move from, so this gives it one and it grows in. */
+@starting-style { .dots circle { r: 0; } }
 .dots circle:hover { fill-opacity: 1; transform: scale(1.5); }
 .dots circle.selected { fill-opacity: 1; }
 #chart svg:has(circle.selected) circle:not(.selected) { fill: var(--muted); fill-opacity: .3; }
@@ -282,7 +329,7 @@ form > .form-note { margin-top: -8px; }
 /* Each row's bar: a full-width track with the language's share of the lines drawn over it. */
 .language-list > div::before,.language-list > div::after { content: ""; grid-area: bar; height: 6px; border-radius: 0 3px 3px 0; }
 .language-list > div::before { background: var(--line); }
-.language-list > div::after { width: calc(var(--share) * 100%); background: var(--color-accent); }
+.language-list > div::after { width: calc(var(--share) * 100%); background: var(--color, var(--color-accent)); }
 .language-list dt { grid-area: name; color: var(--muted); }
 .language-list dd { grid-area: value; margin: 0; color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; }
 dl.info { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 3px 14px; align-items: baseline; transition-duration: 500ms; transition-property: opacity, visibility; }
@@ -298,6 +345,17 @@ dl.info[hidden]:not(:hover,:focus-within) { opacity: 0; visibility: hidden; }
 .commit-table th,.commit-table td { border-top: 1px solid var(--line); padding: 8px 18px 8px 0; text-align: left; white-space: nowrap; }
 .commit-table th { color: var(--muted); font-weight: 400; }
 .commit-table td { color: var(--ink); font-variant-numeric: tabular-nums; }
+/* Narrower than this, the story takes the full width, and the slider and chart are pinned above it. */
+@media(max-width:1179px) {
+  #scrolly-1 { flex-direction: column; align-items: stretch; gap: 0; }
+  #scatter-plot { display: contents; }
+  .pin { order: 1; position: sticky; top: 0; z-index: 2; border-bottom: 1px solid var(--line); padding: .7rem 0 .5rem; background: var(--paper); }
+  #scatter-story { order: 2; flex: none; padding: 1.6rem 0 12vh; }
+  /* The steps sit close together here, so the current one is still in view below the pinned chart when the next takes over. */
+  .step { padding-bottom: 3.25rem; }
+  .selection-panel { order: 3; }
+  .files-block { order: 4; margin-top: 1.6rem; }
+}
 @media(max-width:1000px) {
   body { padding-inline: 28px; }
   .site-header { gap: 20px; }
@@ -312,7 +370,6 @@ dl.info[hidden]:not(:hover,:focus-within) { opacity: 0; visibility: hidden; }
   .stats { grid-template-columns: repeat(3,minmax(0,1fr)); }
   .stats > div:nth-child(4) { border-left: 0; padding-left: 0; }
   .stats > div:nth-child(n+4) { border-top: 1px solid var(--line); }
-  .commit-view { grid-template-columns: minmax(0,1fr); gap: 20px; }
 }
 @media(max-width:760px) {
   .site-header { flex-wrap: wrap; gap: 0 16px; padding-top: 16px; }
@@ -337,6 +394,12 @@ dl.info[hidden]:not(:hover,:focus-within) { opacity: 0; visibility: hidden; }
 }
 @media(max-width:480px) {
   body { padding-inline: 20px; font-size: 16px; }
+  .time-filter label { gap: .4rem .6rem; font-size: .9rem; }
+  .time-filter time { font-size: .68rem; }
+  /* A file's dots go under its name, so they can use the full width. */
+  #files { grid-template-columns: minmax(0,1fr); }
+  #files dt,#files dd { grid-column: 1; }
+  #files dd { padding-top: 0; }
   /* Six links don't fit on one line at a readable size, so they sit in two rows of three. */
   .site-header nav { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 0 12px; }
   .site-header nav a { justify-self: start; min-height: 40px; }
@@ -379,6 +442,9 @@ dl.info[hidden]:not(:hover,:focus-within) { opacity: 0; visibility: hidden; }
 }
 @media(prefers-reduced-motion:reduce) {
   *,*::before,*::after { scroll-behavior: auto !important; }
-  #projects-pie-plot path,.legend-item button,.dots circle,dl.info,.projects .arrow { transition: none; }
+  #projects-pie-plot path,.legend-item button,dl.info,.projects .arrow,.step h3,.step > p { transition: none; }
+  /* A new commit or line still fades in, which shows what changed without anything moving or growing. */
+  .dots circle,.loc { transition: opacity 200ms; }
+  @starting-style { .dots circle,.loc { opacity: 0; } }
   .brush .selection { animation: none; }
 }

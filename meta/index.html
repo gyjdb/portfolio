@@ -26,16 +26,39 @@
   <div id="stats" aria-busy="true"><p class="loading-message">Loading code statistics...</p></div>
 </section>
 <section class="commit-section" aria-labelledby="chart-heading">
-  <h2 id="chart-heading">Commits by time of day</h2>
-  <p class="chart-note">Each dot is a commit that still has lines in the site. Larger dots touched more lines.</p>
-  <div class="commit-view">
-    <div id="chart"></div>
-    <aside class="selection-panel" aria-label="Selected commits">
-      <p id="selection-count">No commits selected</p>
-      <p class="selection-hint">Drag across the chart to select commits. Click the chart to clear.</p>
-      <p class="language-scope" id="language-scope"></p>
-      <dl id="language-breakdown" class="language-list"></dl>
-    </aside>
+  <h2 id="chart-heading">The site, commit by commit</h2>
+  <p class="chart-note">Scroll through the commits that still have lines in the site. The chart shows when each one was made, and the dots under it show which files its lines are in.</p>
+  <!-- Lab 8 Step 3.1: the story scrolls past on one side while the charts stay in view on the other. -->
+  <div id="scrolly-1">
+    <div id="scatter-story"></div>
+    <div id="scatter-plot">
+      <div class="pin">
+        <!-- Lab 8 Step 1.1: the same time can be set by hand. -->
+        <div class="time-filter">
+          <label>
+            <span>Show commits until:</span>
+            <input type="range" id="commit-progress" min="0" max="100" value="0" autocomplete="off">
+            <time id="commit-time"></time>
+          </label>
+          <p class="meta" id="commit-summary"></p>
+        </div>
+        <div id="chart"></div>
+      </div>
+      <aside class="selection-panel" aria-label="Selected commits">
+        <p id="selection-count">No commits selected</p>
+        <p class="selection-hint">Drag across the chart to select commits. Click the chart to clear.</p>
+        <p class="language-scope" id="language-scope"></p>
+        <dl id="language-breakdown" class="language-list"></dl>
+      </aside>
+      <!-- Lab 8 Step 2: one dot for every line of code, grouped by file. -->
+      <div class="files-block">
+        <div class="files-heading">
+          <h3 id="files-heading">Lines by file</h3>
+          <ul class="language-legend" id="language-legend" aria-label="Dot colors"></ul>
+        </div>
+        <dl id="files" aria-labelledby="files-heading"></dl>
+      </div>
+    </div>
   </div>
   <details class="project-study commit-table">
     <summary>View commits as a table</summary>
@@ -52,7 +75,7 @@
     <dt>Date</dt>
     <dd id="commit-date"></dd>
     <dt>Time</dt>
-    <dd id="commit-time"></dd>
+    <dd id="commit-tooltip-time"></dd>
     <dt>Author</dt>
     <dd id="commit-author"></dd>
     <dt>Lines</dt>

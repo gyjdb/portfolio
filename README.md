@@ -147,11 +147,12 @@ Recording sequence: open Projects; hover the 2025 slice, click it, then click it
 - The chart also has a table view with the same commits for keyboard and screen reader users. Brushing itself needs a mouse or touch.
 - The chart is drawn at the width of its container, so axis text stays readable on phones, and redrawn when that width changes, which clears any selection.
 
-Generated files: `node_modules/` is ignored; `meta/loc.csv` is committed. The CSV comes from `git blame`, so it only includes commits that still have lines in the site. Regenerate it after each code commit, then commit the CSV:
+Generated files: `node_modules/` is ignored; `meta/loc.csv` and `meta/commits.tsv` are committed. The CSV comes from `git blame`, so it only includes commits that still have lines in the site. The TSV holds each commit's message, for the Lab 8 story. Regenerate both after each code commit (in Git Bash), then commit them:
 
 ```sh
 npm install
 npx elocuent -d . -o meta/loc.csv --spaces 2
+(printf 'commit\tsubject\n'; git log --format='%H%x09%s') > meta/commits.tsv
 ```
 
 ### Submission
@@ -165,6 +166,25 @@ Suggested short narration (about 40 seconds):
 Recording sequence: open Meta and show the summary; point to a large and a small dot; hover one dot; drag across several dots and show the selection panel; finish with the learning point.
 
 [Lab 6 instructions](https://dsc106.com/labs/lab06/)
+
+## Lab 8: animation and scrollytelling
+
+- The Meta page now tells the story of the codebase. Each commit that still has lines in the site is a step of text. As a step crosses the middle of the window, the charts show the site as it was at that commit. Scrollama watches the steps (`meta/main.js`).
+- A slider, "Show commits until:", sets the same moment by hand. A time scale maps its 0 to 100 onto the range of commit dates.
+- The scatterplot is updated in place. Circles are joined by commit id, so a circle already on the chart keeps its element, and a new circle grows in through a CSS `@starting-style` rule.
+- The lab rescales the x-axis to the commits shown. Here the axes keep the whole timeline, so the chart fills from left to right instead of every dot moving at each step.
+- A unit chart draws one dot for every line of code, grouped by file and colored by technology. Files are sorted by size, and a row slides to its new place when the order changes.
+- JS, CSS, and HTML each have a color, checked for color-blind separation in the light and dark themes. The language bars beside the chart use the same colors.
+- The story's text comes from the commit messages in `meta/commits.tsv`, and each step says how many of that commit's lines are still in the site.
+- On a narrow screen the slider and chart are pinned to the top and the story scrolls under them.
+- With "reduce motion" turned on in the operating system, nothing moves or grows; new dots fade in instead.
+- Lab 6's tooltip, brush, selection panel, and commit table work on the commits currently shown.
+
+### Submission
+
+Record a narrated video of at most one minute on a computer, in this order: scroll the page and show the scatterplot updating, show the unit chart, then share the most interesting thing you learned. The unit chart does not need its own scrollytelling.
+
+[Lab 8 instructions](https://dsc106.com/labs/lab08/)
 
 ## Lab 7: Bikewatching
 
